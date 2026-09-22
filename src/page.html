@@ -223,6 +223,12 @@ input[type="number"],select{font-family:var(--mono);font-size:14px;background:va
 .rfill{height:100%;border-radius:0 4px 4px 0;background:var(--accent);transition:width .45s cubic-bezier(.22,.7,.3,1)}
 .matrix{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
 .detail-tbl{margin-top:20px}
+.reactlist{display:flex;flex-direction:column;margin-top:12px;border-top:1px solid var(--line)}
+.reactlist div{display:grid;grid-template-columns:132px 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.reactlist div>*{min-width:0}
+.reactlist b{font-family:var(--disp);font-weight:600;font-size:14.5px;letter-spacing:-.01em}
+.reactlist span{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+@media (max-width:560px){.reactlist div{grid-template-columns:1fr;gap:3px}}
 
 /* ---------- second circle ---------- */
 .circle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
@@ -230,6 +236,64 @@ input[type="number"],select{font-family:var(--mono);font-size:14px;background:va
 .cc .cn{font-family:var(--disp);font-size:18px;font-weight:600;letter-spacing:-.015em}
 .cc .cr{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .cc p{font-size:14.5px;color:var(--ink-2);line-height:1.45}
+
+/* ---------- focus entries (other beneficiaries) ---------- */
+.focus{margin-top:30px;border-top:1px solid var(--line-2)}
+.fitem{display:grid;grid-template-columns:215px 1fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--line)}
+.fitem>*{min-width:0}
+.fside{display:flex;flex-direction:column;gap:9px}
+.fside .fn{font-family:var(--disp);font-size:21px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.fside .ft{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.fside .fq{font-family:var(--mono);font-size:12px;color:var(--accent);font-variant-numeric:tabular-nums}
+.fside .tag{align-self:flex-start}
+.fmain{display:flex;flex-direction:column;gap:12px}
+.fmain p{font-size:15.5px;line-height:1.55}
+.fbut{border-left:2px solid var(--amber);padding-left:14px;font-size:14.5px;color:var(--ink-2)}
+.fbut b{color:var(--ink);font-weight:600}
+
+/* ---------- regulatory pipeline ---------- */
+.pipe{margin-top:30px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.prow{display:grid;grid-template-columns:104px 230px 1fr;gap:18px;padding:15px 18px;border-bottom:1px solid var(--line);align-items:start}
+.prow:last-child{border-bottom:0}
+.prow>*{min-width:0}
+.prow .pt{font-family:var(--disp);font-size:15.5px;font-weight:600;letter-spacing:-.01em}
+.prow .pd{font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.pstat{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:4px 7px;border-radius:3px;text-align:center;border:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap;display:inline-block}
+.pstat.done{color:var(--good);border-color:color-mix(in srgb,var(--good) 45%,transparent);background:color-mix(in srgb,var(--good) 10%,transparent)}
+.pstat.live{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);background:var(--accent-soft)}
+.pstat.soon{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent);background:color-mix(in srgb,var(--warn) 10%,transparent)}
+.pstat.dead{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 45%,transparent);background:color-mix(in srgb,var(--bad) 10%,transparent)}
+
+/* ---------- offer ---------- */
+.offer{border-bottom:1px solid var(--line);padding-block:64px}
+.offerbox{border:1px solid var(--accent);border-radius:8px;background:var(--surface);overflow:hidden}
+.offertop{padding:34px 34px 30px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,var(--accent-soft),transparent 70%)}
+.offertop .eyebrow{color:var(--accent)}
+.offerh{font-family:var(--disp);font-size:clamp(28px,5vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:14px;max-width:18ch}
+.offerh em{font-style:normal;color:var(--accent)}
+.offerp{font-size:17.5px;color:var(--ink-2);margin-top:16px;max-width:56ch;line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--line)}
+.step{padding:22px 24px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step .sn{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em}
+.step .sh{font-family:var(--disp);font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin-top:9px}
+.step .sp{font-size:14.5px;color:var(--ink-2);margin-top:7px;line-height:1.45}
+.offeract{padding:24px 34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.cta{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.03em;padding:14px 22px;border-radius:5px;text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);transition:background .15s,border-color .15s}
+.cta:hover{background:var(--accent-2);border-color:var(--accent-2)}
+.cta.ghost{background:transparent;color:var(--accent)}
+.cta.ghost:hover{background:var(--accent-soft);color:var(--accent)}
+.offernote{padding:18px 34px 26px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);line-height:1.6}
+.offernote b{color:var(--ink-2);font-weight:600}
+@media (max-width:820px){
+  .fitem{grid-template-columns:1fr;gap:14px}
+  .prow{grid-template-columns:1fr;gap:8px}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .offertop,.offeract,.offernote{padding-inline:22px}
+  .cta{width:100%;justify-content:center}
+}
 
 /* ---------- risks ---------- */
 .risks{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:32px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
@@ -312,8 +376,10 @@ html{scroll-behavior:smooth}
       <a href="#simulateur">Simulateur</a>
       <a href="#acteurs">Les 5 acteurs</a>
       <a href="#scoring">Classement</a>
-      <a href="#second">2ᵉ cercle</a>
+      <a href="#second">Autres gagnants</a>
+      <a href="#dynamique">La dynamique</a>
       <a href="#risques">Risques</a>
+      <a href="#offre">L'offre</a>
     </nav>
     <button class="themebtn" id="themebtn" type="button" aria-label="Changer de thème">Thème</button>
   </div>
@@ -739,9 +805,11 @@ html{scroll-behavior:smooth}
           <div id="matrixChart"></div>
         </div>
         <div class="panel pad detail-tbl">
-          <div class="eyebrow">Notes de détail et réaction observée du marché</div>
+          <div class="eyebrow">Notes de détail</div>
           <div class="scroller"><table class="data" id="detailTable" style="margin-top:16px"></table></div>
-          <p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:14px;line-height:1.5">Les fenêtres de mesure diffèrent d'une ligne à l'autre et sont indiquées telles que publiées — elles ne sont pas comparables entre elles. C'est précisément le point : les mouvements les plus forts se trouvent sur les acteurs les moins couverts par le texte.</p>
+          <div class="eyebrow" style="margin-top:26px">Réaction observée du marché</div>
+          <div class="reactlist" id="reactList"></div>
+          <p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:16px;line-height:1.5">Les fenêtres de mesure diffèrent d'une ligne à l'autre et sont indiquées telles que publiées — elles ne sont pas comparables entre elles. C'est précisément le point : les mouvements les plus forts se trouvent sur les acteurs les moins couverts par le texte.</p>
         </div>
       </div>
     </div>
@@ -750,22 +818,119 @@ html{scroll-behavior:smooth}
 
 <section id="second">
   <div class="wrap">
-    <div class="sechead"><div class="secnum">§ 07</div><h2>Le second cercle : ceux qui encaissent quoi qu'il arrive</h2></div>
-    <p class="lede read">Les cinq acteurs principaux se disputent la place de lieu de négociation ou d'émetteur. Sous eux, une couche d'infrastructure sera traversée par chaque transaction, quel que soit le vainqueur. C'est souvent le meilleur endroit où se placer dans un marché dont on ne sait pas encore qui le gagnera.</p>
+    <div class="sechead"><div class="secnum">§ 07</div><h2>Au-delà des cinq : les autres bénéficiaires</h2></div>
+    <p class="lede read">Les cinq acteurs du § 05 se disputent la place de lieu de négociation ou d'émetteur. Mais l'ordre crée aussi de la demande pour des briques que personne ne regarde — et il existe au moins une société qui remplit déjà, aujourd'hui, les conditions les plus difficiles. Quatre analyses détaillées, puis huit positions plus courtes.</p>
+
+    <div class="focus">
+
+      <div class="fitem">
+        <div class="fside">
+          <div class="fn">Dinari</div>
+          <div class="ft">Non coté · le mieux placé</div>
+          <div class="fq">724 actions tokenisées</div>
+          <span class="tag good">Déjà conforme aux US</span>
+        </div>
+        <div class="fmain">
+          <p>C'est le nom absent de toutes les listes de gagnants, et c'est probablement le mieux positionné de tous. <b>Dinari Inc. est enregistré auprès de la SEC comme <em>transfer agent</em>, et sa filiale Dinari Securities est un broker-dealer membre de la FINRA et de la SIPC.</b> C'est exactement la combinaison réglementaire qu'exige l'exemption — entité américaine, contrôle de l'identité des participants, capacité à tenir le registre des actionnaires, donc à transmettre les droits de vote.</p>
+          <p>Le 4 août 2026, Dinari a mis en ligne <b>724 actions tokenisées, dont l'intégralité du S&amp;P 500</b>, accessibles aux investisseurs américains éligibles et aux institutions américaines, achetables en USDC depuis un wallet auto-conservé via un partenariat avec Circle. Les dShares — dAAPL, dTSLA, dNVDA — existent sur Ethereum, Arbitrum, Base et Avalanche. L'accès au retail non accrédité passe par une qualification Regulation A+, celui des accrédités par l'exemption correspondante.</p>
+          <div class="fbut"><b>Le bémol :</b> Dinari n'est pas cotée et n'a pas de token — il n'y a aucune façon simple de s'y exposer. C'est une analyse de structure de marché, pas une idée d'investissement. Et l'univers de 724 titres dépasse largement les 75 symboles Tier 1 qu'un TSV peut lister : l'émission n'est pas la négociation, et les plafonds s'appliquent au lieu, pas à l'émetteur.</div>
+        </div>
+      </div>
+
+      <div class="fitem">
+        <div class="fside">
+          <div class="fn">Chainlink</div>
+          <div class="ft">Token LINK · oracles</div>
+          <div class="fq">3 conditions sur 9</div>
+          <span class="tag acc">Passage obligé technique</span>
+        </div>
+        <div class="fmain">
+          <p>Trois des neuf conditions de l'ordre exigent une source de vérité externe branchée sur le smart contract, et aucune n'est résoluble en interne par un AMM : <b>la synchronisation des suspensions avec le marché primaire</b> (§ 08 de l'ordre), <b>la preuve que l'action sous-jacente existe réellement en conservation</b>, et <b>le passage des actions de société</b> — dividendes, splits, votes. Ce sont littéralement les trois produits de Chainlink : flux de données, Proof of Reserve, et le standard d'<em>asset servicing</em> développé avec Swift, DTCC, Euroclear, UBS et une vingtaine d'autres institutions.</p>
+          <p>Le catalyseur le plus concret n'est pas l'exemption elle-même : la DTCC a obtenu une <em>no-action letter</em> de la SEC pour exploiter pendant trois ans un service de tokenisation en production, avec des premiers échanges en juillet 2026 et un déploiement élargi en octobre 2026 — <b>construit sur l'infrastructure Chainlink</b>. Si les actions tokenisées américaines passent par le dépositaire central, elles passent par là.</p>
+          <div class="fbut"><b>Le bémol :</b> le lien entre l'usage du réseau et la valeur du token LINK reste indirect et plus faible que chez Uniswap ou Hyperliquid. Un service d'oracle facturé en dollars à la DTCC ne se traduit pas mécaniquement en demande de LINK. C'est la thèse « passage obligé » classique — solide sur le volume, discutable sur la capture.</div>
+        </div>
+      </div>
+
+      <div class="fitem">
+        <div class="fside">
+          <div class="fn">Solana</div>
+          <div class="ft">Token SOL · exécution</div>
+          <div class="fq">23 % du marché</div>
+          <span class="tag acc">Coût par transaction</span>
+        </div>
+        <div class="fmain">
+          <p>Solana porte déjà environ <b>465 M$ d'actions tokenisées, soit 23 % de la capitalisation onchain</b>, derrière Ethereum et ses 34 %. Son argument est simple et matériel : un pool AMM sur actions doit absorber un rééquilibrage permanent, et le coût par transaction devient une ligne de P&amp;L pour le teneur de marché, pas un détail technique. Superstate émet déjà des actions de sociétés enregistrées auprès de la SEC directement sur Solana ; Forward Industries y a été l'une des premières.</p>
+          <p>L'écosystème suit : les xStocks de Backed y sont largement distribués, Kamino accepte des actions tokenisées comme collatéral — la première fois que des titres cotés enregistrés auprès de la SEC servent de collatéral dans un protocole DeFi — et Raydium fournit la liquidité AMM.</p>
+          <div class="fbut"><b>Le bémol :</b> l'exemption impose une blockchain <em>publique et sans permission</em>, ce qui qualifie Solana — mais ne la privilégie pas. Le choix de la chaîne revient au TSV, et si le premier TSV américain est Coinbase, l'exécution se fera sur Base. La part de marché actuelle est un indicateur d'écosystème, pas une réservation.</div>
+        </div>
+      </div>
+
+      <div class="fitem">
+        <div class="fside">
+          <div class="fn">Securitize</div>
+          <div class="ft">NYSE : SECZ</div>
+          <div class="fq">+841 % de revenus</div>
+          <span class="tag good">Coté depuis juillet 2026</span>
+        </div>
+        <div class="fmain">
+          <p>Le seul pure-player de la tokenisation accessible en bourse. Securitize est entrée au NYSE sous le symbole <b>SECZ le 2 juillet 2026</b>, via un rapprochement avec le SPAC Cantor Equity Partners II valorisant l'ensemble 1,25 Md$ avant opération. Les revenus avaient progressé de <b>841 % sur un an</b>, à 55,6 M$ sur neuf mois.</p>
+          <p>Sa position dans l'ordre est la même que celle d'Ondo : la condition de tokenisation par un tiers non affilié en fait un fournisseur structurellement nécessaire, et Securitize détient déjà ~7,9 % du marché des actions tokenisées avec 80,6 M$. La société tokenise par ailleurs ses propres actions via son propre <em>transfer agent</em> — une version native sur les rails DTCC, une version tokenisée sur blockchain — ce qui en fait sa propre démonstration commerciale.</p>
+          <div class="fbut"><b>Le bémol :</b> 80,6 M$ d'encours face aux 955 M$ d'Ondo, pour une société valorisée plus d'un milliard. La croissance des revenus vient surtout des fonds tokenisés, pas des actions. Et une cotation récente issue d'un SPAC ajoute un risque de flottant et de verrouillage que l'analyse fondamentale ne capture pas.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="eyebrow" style="margin-top:44px">Les positions plus courtes</div>
     <div class="circle-grid">
-      <div class="cc"><div class="cr">Règlement</div><div class="cn">Circle · USDC</div><p>L'ordre impose que les données de transaction soient libellées en dollars et publiées simultanément à tous. Un stablecoin dollar régulé est le véhicule de règlement naturel d'un pool AMM. Goldman Sachs et Citizens citent Circle parmi les premiers bénéficiaires, via l'usage de l'USDC en règlement et en collatéral.</p></div>
-      <div class="cc"><div class="cr">Oracles</div><div class="cn">Chainlink</div><p>Trois conditions de l'ordre exigent une source de vérité externe : la synchronisation des halts avec le marché primaire, la preuve que l'action sous-jacente existe bien, et le passage des actions de société. Proof of Reserve, CCIP et les intégrations dépositaires visent exactement ces trois points.</p></div>
-      <div class="cc"><div class="cr">Exécution</div><div class="cn">Solana</div><p>23 % de la capitalisation des actions tokenisées, environ 465 M$ déjà en circulation, et un coût par transaction compatible avec un AMM actif. Le premier bénéficiaire parmi les chaînes si les TSV privilégient le coût d'exécution.</p></div>
-      <div class="cc"><div class="cr">Exécution</div><div class="cn">Ethereum &amp; Base</div><p>Ethereum garde 34 % du marché — la part la plus élevée — et Base est la chaîne captive de Coinbase. Si le premier TSV américain est Coinbase, l'exécution se fera là, avec des revenus de séquenceur qui remontent à l'exploitant.</p></div>
-      <div class="cc"><div class="cr">Dépositaire</div><div class="cn">Alpaca</div><p>L'infrastructure invisible mais critique : courtier-dépositaire régulé derrière les actions tokenisées de Coinbase, et opérateur de l'Instant Tokenization Network qui rend possible la conversion <em>in-kind</em> d'Ondo. Deux des cinq acteurs en dépendent déjà.</p></div>
-      <div class="cc"><div class="cr">Émission</div><div class="cn">Backed · xStocks &amp; Securitize</div><p>Plus de 25 Md$ de volume cumulé et 80 000 détenteurs onchain pour xStocks ; Securitize détient ~7,9 % du marché avec 80,6 M$. La condition de tokenisation par un tiers non affilié fait de ces acteurs des fournisseurs obligés, aux côtés d'Ondo.</p></div>
+      <div class="cc"><div class="cr">Règlement · CRCL</div><div class="cn">Circle · USDC</div><p>L'ordre impose des données de transaction libellées en dollars et publiées simultanément à tous. Un stablecoin dollar régulé est le véhicule naturel du règlement dans un pool. Goldman Sachs et Citizens citent Circle parmi les premiers bénéficiaires ; c'est aussi Circle qui permet à Dinari de faire acheter des actions en USDC depuis un wallet auto-conservé.</p></div>
+      <div class="cc"><div class="cr">Exécution · ETH</div><div class="cn">Ethereum &amp; Base</div><p>Ethereum garde la première part du marché avec 34 % de la capitalisation onchain, et Base est la chaîne captive de Coinbase — celle qui héberge déjà ses 19 actions tokenisées au standard B20. Si le premier TSV américain est Coinbase, les revenus de séquenceur remontent à l'exploitant du lieu lui-même.</p></div>
+      <div class="cc"><div class="cr">AMM · AERO</div><div class="cn">Aerodrome</div><p>L'AMM de référence sur Base. Le même raisonnement que pour Uniswap s'applique — la SEC a validé le modèle AMM comme structure de marché admissible — avec un avantage de proximité si Coinbase déploie ses pools sur sa propre chaîne, et le même point faible : rien ne garantit que les frais d'un pool permissionné remontent au token.</p></div>
+      <div class="cc"><div class="cr">AMM · RAY</div><div class="cn">Raydium</div><p>L'équivalent côté Solana, en hausse de 20 % sur l'annonce. Raydium fournit déjà la liquidité AMM des xStocks et a été partenaire du lancement d'Injective sur Solana. Position réelle sur la liquidité des actions tokenisées, mais entièrement hors du périmètre américain à ce stade.</p></div>
+      <div class="cc"><div class="cr">Infrastructure · INJ</div><div class="cn">Injective</div><p>Chaîne spécialisée sur les actifs financiers, avec des marchés d'actifs synthétiques adossés à des actions. Même limite que Hyperliquid : le synthétique est explicitement exclu de l'exemption. Bénéficiaire du récit RWA, pas du texte — à traiter comme une exposition thématique, pas réglementaire.</p></div>
+      <div class="cc"><div class="cr">Émission · non coté</div><div class="cn">Superstate</div><p>82,5 M$ levés en janvier 2026 auprès de Bain Capital Crypto. Sa plateforme Opening Bell permet à des sociétés <em>enregistrées auprès de la SEC</em> d'émettre des actions directement sur Ethereum et Solana, réglées en stablecoins. Galaxy Digital, SharpLink et Forward Industries l'ont déjà utilisée. C'est aussi le partenaire des pools permissionnés d'Uniswap.</p></div>
+      <div class="cc"><div class="cr">Conservation · non coté</div><div class="cn">Alpaca</div><p>Le courtier-dépositaire régulé derrière les actions tokenisées de Coinbase, et l'opérateur de l'Instant Tokenization Network qui rend possible la conversion <em>in-kind</em> d'Ondo. Deux des cinq acteurs principaux en dépendent déjà — l'infrastructure la plus invisible et la plus critique de la chaîne.</p></div>
+      <div class="cc"><div class="cr">Émission · DTCC</div><div class="cn">Backed · xStocks &amp; la DTCC</div><p>xStocks dépasse 25 Md$ de volume cumulé et 80 000 détenteurs onchain — la démonstration que la demande existe. En face, la DTCC lance son propre service de tokenisation sous <em>no-action letter</em> de trois ans, avec un déploiement élargi en octobre 2026. Le dépositaire central américain entre dans le jeu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="dynamique">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 08</div><h2>La dynamique : une loi est morte, dix portes s'ouvrent</h2></div>
+    <div class="body-col">
+      <p class="lede read">Le 15 septembre 2026, le Sénat a rejeté la clôture sur le CLARITY Act par <b>49 voix contre 50</b> — onze voix sous le seuil de 60 nécessaire pour ouvrir le débat. La sénatrice Cynthia Lummis a déclaré le texte « pratiquement mort ». La Chambre avait déjà annulé ses semaines du 21 et du 28 septembre, le Sénat entrait en période de travail en circonscription le 5 octobre, et les élections du 3 novembre fermaient la fenêtre. La prochaine occasion sérieuse, c'est le prochain Congrès.</p>
+      <p class="read">Deux jours plus tard, la SEC signait l'exemption. <b>C'est ça, la dynamique — et c'est le point le plus important de ce dossier.</b> Faute de loi, le pouvoir normatif est passé du Congrès aux régulateurs, qui agissent sous leur autorité existante : ordres exemptifs, lettres de non-action, safe harbors, rulemaking. Chacun est plus étroit qu'une loi. Mais chacun arrive beaucoup plus vite, et ils s'accumulent. Bernstein anticipe désormais un rulemaking « agressif et rapide » des deux agences.</p>
+      <p class="read">L'ordre 34-106402 n'est pas un événement isolé : c'est un <b>modèle réplicable</b>. Ordre exemptif conditionnel, plafonds calibrés, période de commentaires ouverte, durée déterminée. Ce format peut être réutilisé pour les titres OTC, les swaps sur titres, la conservation, les ETF tokenisés — tout ce que l'exemption exclut aujourd'hui. Le dossier 4-927 est d'ailleurs ouvert aux commentaires, sans date limite annoncée : le cadre lui-même peut encore s'élargir.</p>
+    </div>
+
+    <div class="eyebrow" style="margin-top:36px">Ce qui est déjà dans le tuyau</div>
+    <div class="pipe">
+      <div class="prow"><span class="pstat dead">Bloqué</span><div class="pt">CLARITY Act</div><div class="pd">Clôture rejetée 49-50 au Sénat le 15 septembre 2026, onze voix sous le seuil. La structure de marché crypto attend le prochain Congrès.</div></div>
+      <div class="prow"><span class="pstat live">En vigueur</span><div class="pt">Innovation Exemption (34-106402)</div><div class="pd">Actions NMS tokenisées sur AMM permissionnés, cinq ans, neuf conditions. Le sujet de ce dossier — et le patron des ordres suivants.</div></div>
+      <div class="prow"><span class="pstat done">Adopté</span><div class="pt">Normes de cotation génériques pour les ETP crypto</div><div class="pd">La SEC a approuvé des standards génériques, supprimant l'examen au cas par cas qui bloquait les produits cotés adossés à des cryptos.</div></div>
+      <div class="prow"><span class="pstat live">En production</span><div class="pt">Service de tokenisation de la DTCC</div><div class="pd"><em>No-action letter</em> de trois ans pour un service en production. Premiers échanges en juillet 2026, déploiement élargi en octobre 2026, sur infrastructure Chainlink.</div></div>
+      <div class="prow"><span class="pstat soon">Proposé</span><div class="pt">Taxonomie des tokens (Project Crypto)</div><div class="pd">Quatre catégories — actifs numériques de type matière première, objets de collection, outils, et titres tokenisés — pour trancher enfin ce qui est un titre et ce qui ne l'est pas.</div></div>
+      <div class="prow"><span class="pstat soon">Proposé</span><div class="pt">Safe harbor à l'émission de tokens</div><div class="pd">12 à 36 mois pour émettre et faire circuler un token sans enregistrement complet, sous garanties fondées sur des principes. L'équivalent de l'exemption du 17 septembre, côté émission.</div></div>
+      <div class="prow"><span class="pstat soon">Proposé</span><div class="pt">« Startup exemption »</div><div class="pd">Levées jusqu'à 5 M$ sur quatre ans pour les projets crypto, sur le modèle des exemptions d'offre existantes.</div></div>
+      <div class="prow"><span class="pstat soon">Proposé</span><div class="pt">Cadre « super-app »</div><div class="pd">Une plateforme unique pour les titres, les dérivés, les cryptos et les services bancaires. C'est la cible finale de Coinbase et de Robinhood — et ce qui ferait tomber la cloison entre leurs deux activités.</div></div>
+      <div class="prow"><span class="pstat soon">Proposé</span><div class="pt">Modernisation des <em>transfer agents</em></div><div class="pd">Adapter les règles de tenue de registre aux titres tokenisés réglés onchain. Sans cela, la condition de droits de vote de l'exemption reste difficile à satisfaire à grande échelle.</div></div>
+      <div class="prow"><span class="pstat soon">Proposé</span><div class="pt">Conservation élargie</div><div class="pd">Autoriser les conseillers en investissement à détenir des cryptos en direct et reconnaître les sociétés fiduciaires d'État comme dépositaires qualifiés. C'est la porte d'entrée des capitaux institutionnels.</div></div>
+      <div class="prow"><span class="pstat soon">En examen</span><div class="pt">Règles de marché de la CFTC</div><div class="pd">Envoyées à la Maison-Blanche pour examen le 18 septembre 2026, trois jours après l'échec du CLARITY Act. Contenu non publié. La CFTC a par ailleurs accordé une non-action aux interfaces de wallets passives.</div></div>
+      <div class="prow"><span class="pstat soon">En cours</span><div class="pt">Négociation 24 heures sur 24</div><div class="pd">SEC et CFTC avancent conjointement. C'est le prolongement naturel de l'exemption : un token qui se négocie le week-end perd son intérêt si le marché de référence reste fermé.</div></div>
+    </div>
+
+    <div class="panel pad" style="margin-top:24px">
+      <div class="eyebrow">Ce que ça change pour la thèse</div>
+      <p style="margin-top:12px;max-width:var(--read);font-size:16px">Si l'on ne retient qu'une chose : <b>ne pariez pas sur une grande loi, pariez sur l'accumulation de petites portes.</b> Chaque ordre exemptif est étroit, plafonné et temporaire — et c'est précisément ce qui le rend possible sans passer par le Congrès. Les acteurs qui gagnent dans ce régime ne sont pas ceux qui ont la meilleure technologie, mais ceux qui savent franchir une porte étroite après l'autre : entité américaine, licences, contrôles d'identité, relations émetteurs, équipes de conformité.</p>
+      <p style="margin-top:14px;max-width:var(--read);font-size:16px;color:var(--ink-2)">Le revers, énoncé sans détour : <b>ce qu'une commission accorde, une autre composition peut le retirer.</b> Un ordre administratif se défait infiniment plus vite qu'une loi, résiste moins bien à une contestation contentieuse, et dépend de la couleur politique de la SEC. La dynamique est réelle ; elle n'est pas irréversible.</p>
     </div>
   </div>
 </section>
 
 <section id="risques">
   <div class="wrap">
-    <div class="sechead"><div class="secnum">§ 08</div><h2>Cinq angles morts</h2></div>
+    <div class="sechead"><div class="secnum">§ 09</div><h2>Cinq angles morts</h2></div>
     <p class="lede read">Les arguments qui feront dérailler la thèse, s'ils doivent la faire dérailler.</p>
     <div class="risks">
       <div class="risk">
@@ -804,7 +969,7 @@ html{scroll-behavior:smooth}
 
 <section id="chrono">
   <div class="wrap">
-    <div class="sechead"><div class="secnum">§ 09</div><h2>Comment on en est arrivé là</h2></div>
+    <div class="sechead"><div class="secnum">§ 10</div><h2>Comment on en est arrivé là</h2></div>
     <div class="tl">
       <div class="tli"><div class="d">Juillet 2025</div><div class="t">Kraken et Backed lancent xStocks : les premières actions américaines tokenisées à grande échelle, hors des États-Unis.</div></div>
       <div class="tli"><div class="d">Octobre 2025</div><div class="t">HIP-3 entre en production sur Hyperliquid : n'importe qui peut déployer un marché de perpétuels en immobilisant 500 000 HYPE.</div></div>
@@ -813,10 +978,53 @@ html{scroll-behavior:smooth}
       <div class="tli"><div class="d">Juillet 2026</div><div class="t">Uniswap lance les pools permissionnés en v4 avec Superstate et Securitize — l'architecture que l'ordre décrira deux mois plus tard.</div></div>
       <div class="tli"><div class="d">24 août 2026</div><div class="t">Coinbase met en ligne 13 actions tokenisées sur Base, adossées à des titres réels conservés par Alpaca.</div></div>
       <div class="tli"><div class="d">26 août 2026</div><div class="t">Hyperliquid active AQAv2 : le rendement des réserves USDC alimente les rachats de HYPE.</div></div>
-      <div class="tli"><div class="d">Mi-septembre 2026</div><div class="t">Le CLARITY Act s'enlise au Sénat. La voie législative se referme.</div></div>
+      <div class="tli"><div class="d">15 septembre 2026</div><div class="t">Le Sénat rejette la clôture sur le CLARITY Act, 49 voix contre 50 — onze sous le seuil de 60. La voie législative se referme.</div></div>
       <div class="tli key"><div class="d">17 septembre 2026</div><div class="t">La SEC publie l'ordre 34-106402 — l'Innovation Exemption. Cinq ans, neuf conditions, deux niveaux de plafond.</div></div>
       <div class="tli"><div class="d">21 septembre 2026</div><div class="t">Ondo lance la conversion <em>in-kind</em> avec Alpaca. HYPE inscrit un plus-haut historique à 95,97 $.</div></div>
       <div class="tli key"><div class="d">17 septembre 2031</div><div class="t">Expiration de l'exemption. Sans règle permanente d'ici là, le dispositif s'éteint.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BLOC OFFRE — les deux pseudos ci-dessous sont à confirmer.
+     Cherchez INSTAGRAM_HANDLE et TIKTOK_HANDLE pour les changer.
+     ============================================================ -->
+<section class="offer" id="offre">
+  <div class="wrap">
+    <div class="offerbox">
+      <div class="offertop">
+        <div class="eyebrow">Offre de bienvenue</div>
+        <h2 class="offerh">On t'offre <em>30 €</em> en crypto, sans aucun dépôt.</h2>
+        <p class="offerp">Inscris-toi sur eToro avec notre lien, envoie-moi un DM, et je t'envoie tes 30 € en crypto. Pas besoin de déposer quoi que ce soit — il suffit de créer ton compte.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="sn">Étape 01</div>
+          <div class="sh">Crée ton compte</div>
+          <div class="sp">Inscris-toi sur eToro via le lien ci-dessous. Aucun dépôt n'est demandé pour bénéficier de l'offre.</div>
+        </div>
+        <div class="step">
+          <div class="sn">Étape 02</div>
+          <div class="sh">Envoie-moi un DM</div>
+          <div class="sp">Un message sur Instagram ou TikTok avec le pseudo du compte que tu viens de créer, et c'est tout.</div>
+        </div>
+        <div class="step">
+          <div class="sn">Étape 03</div>
+          <div class="sh">Reçois tes 30 €</div>
+          <div class="sp">Je t'envoie 30 € en crypto, gratuitement. Tu en fais ce que tu veux — y compris tester ce que raconte ce dossier.</div>
+        </div>
+      </div>
+      <div class="offeract">
+        <a class="cta" href="https://cloud.connect.etoro.com/Cryptocomics?utm_medium=Affiliate&amp;utm_source=131703&amp;utm_content=22454&amp;utm_serial=&amp;utm_campaign=&amp;utm_term=" target="_blank" rel="noopener sponsored">S'inscrire sur eToro →</a>
+        <!-- INSTAGRAM_HANDLE -->
+        <a class="cta ghost" href="https://instagram.com/cryptocomics" target="_blank" rel="noopener">DM sur Instagram</a>
+        <!-- TIKTOK_HANDLE -->
+        <a class="cta ghost" href="https://tiktok.com/@cryptocomics" target="_blank" rel="noopener">DM sur TikTok</a>
+      </div>
+      <div class="offernote">
+        <b>Lien affilié.</b> Nous percevons une commission d'eToro si tu ouvres un compte via ce lien — c'est ce qui finance l'offre. Les 30 € sont une initiative personnelle : ils sont versés par nous, pas par eToro, qui n'est ni partenaire ni garant de cette offre. <b>Les investissements comportent des risques, votre capital est à risque.</b> Rien sur cette page ne constitue un conseil en investissement.
+      </div>
     </div>
   </div>
 </section>
@@ -841,9 +1049,17 @@ html{scroll-behavior:smooth}
       <a href="https://www.coingecko.com/learn/hyperliquid-hip3-hip4-tokenized-stocks-and-prediction-markets" target="_blank" rel="noopener">CoinGecko — HIP-3, actions tokenisées et marchés de prédiction</a>
       <a href="https://www.benzinga.com/crypto/26/09/61884662/hyperliquid-uniswap-tokens-surge-as-sec-amends-tokenized-stock-trading-rules" target="_blank" rel="noopener">Benzinga — Envolée de HYPE et UNI</a>
       <a href="https://cryptobriefing.com/robinhood-tokenized-stock-trading-us-2027/" target="_blank" rel="noopener">Crypto Briefing — Robinhood vise 2027 aux États-Unis</a>
+      <a href="https://www.coindesk.com/policy/2026/09/15/crypto-clarity-act-flames-out-in-failed-u-s-senate-vote" target="_blank" rel="noopener">CoinDesk — Échec du CLARITY Act au Sénat (49-50)</a>
+      <a href="https://www.forbes.com/sites/digital-assets/2026/09/16/after-clarity-act-stalls-sec-and-cftc-take-on-bigger-role/" target="_blank" rel="noopener">Forbes — La SEC et la CFTC prennent le relais</a>
+      <a href="https://www.sec.gov/newsroom/speeches-statements/atkins-111225-secs-approach-digital-assets-inside-project-crypto" target="_blank" rel="noopener">SEC — À l'intérieur de « Project Crypto »</a>
+      <a href="https://www.theblock.co/post/383241/crypto-regulation-2026-sec-ambitious-agenda-empowered-cftc" target="_blank" rel="noopener">The Block — L'agenda 2026 de la SEC et de la CFTC</a>
+      <a href="https://www.coindesk.com/business/2026/08/04/dinari-brings-tokenized-u-s-stocks-to-american-investors-as-equity-race-heats-up" target="_blank" rel="noopener">CoinDesk — Dinari ouvre les actions tokenisées aux investisseurs américains</a>
+      <a href="https://www.nasdaq.com/press-release/securitize-completes-business-combination-cantor-equity-partners-ii-2026-07-01" target="_blank" rel="noopener">Nasdaq — Securitize entre en bourse (NYSE : SECZ)</a>
+      <a href="https://www.coindesk.com/business/2026/01/22/tokenization-firm-superstate-raises-usd82-5-million-to-bring-wall-street-onchain" target="_blank" rel="noopener">CoinDesk — Superstate lève 82,5 M$</a>
+      <a href="https://chain.link/resources/establishing-unified-standard-asset-servicing" target="_blank" rel="noopener">Chainlink — Standard unifié d'<em>asset servicing</em></a>
     </div>
     <div class="disclaimer">
-      <b>Avertissement.</b> Ce dossier est un travail d'analyse et de vulgarisation, à jour au 22 septembre 2026. Il ne constitue ni un conseil en investissement, ni un conseil juridique, ni une recommandation d'achat ou de vente. Les notes attribuées aux acteurs sont des jugements éditoriaux argumentés, pas des mesures. Les chiffres proviennent de sources publiques citées ci-dessus, avec leurs dates de relevé ; les cours et encours évoluent en permanence. Le simulateur de conformité est un outil pédagogique qui simplifie un ordre administratif de plusieurs dizaines de pages — reportez-vous au texte 34-106402 et à un conseil qualifié pour toute décision réelle.
+      <b>Avertissement.</b> Ce dossier est un travail d'analyse et de vulgarisation, à jour au 22 septembre 2026. Il ne constitue ni un conseil en investissement, ni un conseil juridique, ni une recommandation d'achat ou de vente. Les notes attribuées aux acteurs sont des jugements éditoriaux argumentés, pas des mesures. Les chiffres proviennent de sources publiques citées ci-dessus, avec leurs dates de relevé ; les cours et encours évoluent en permanence. Le simulateur de conformité est un outil pédagogique qui simplifie un ordre administratif de plusieurs dizaines de pages — reportez-vous au texte 34-106402 et à un conseil qualifié pour toute décision réelle. Cette page contient un lien affilié vers eToro, signalé comme tel, qui nous rémunère si vous ouvrez un compte.
     </div>
     <p class="mono" style="font-size:11px;color:var(--ink-3);margin-top:24px">Dossier 34-106402 · Analyse indépendante · Données relevées le 22 septembre 2026</p>
   </div>
@@ -1232,13 +1448,17 @@ function render(){
     row.appendChild(el("div","rs mono", r.v.toFixed(0)));
     host.appendChild(row);
   });
+  var SHORT = {elig:"Éligib.", conf:"Conform.", dist:"Distrib.", infra:"Infra.", capt:"Capture", speed:"Vitesse"};
   var t = $("#detailTable");
-  var head = "<thead><tr><th>Acteur</th>" + CRIT.map(function(c){ return "<th>"+c.n.replace(" US","").replace("Éligibilité TSV","Éligibilité")+"</th>"; }).join("") + "<th>Score</th><th>Réaction observée du marché</th></tr></thead>";
+  var head = "<thead><tr><th>Acteur</th>" + CRIT.map(function(c){ return "<th title='"+c.n+"'>"+SHORT[c.id]+"</th>"; }).join("") + "<th>Score</th></tr></thead>";
   var body = "<tbody>" + ranked.map(function(r){
     return "<tr><td class='name'>"+r.a.n+"</td>" + CRIT.map(function(c){ return "<td>"+r.a.s[c.id]+"</td>"; }).join("") +
-           "<td style='color:var(--accent);font-weight:600'>"+r.v.toFixed(0)+"</td><td style='color:var(--ink-2)'>"+r.a.react+"</td></tr>";
+           "<td style='color:var(--accent);font-weight:600'>"+r.v.toFixed(0)+"</td></tr>";
   }).join("") + "</tbody>";
   t.innerHTML = head + body;
+  $("#reactList").innerHTML = ranked.map(function(r){
+    return "<div><b>"+r.a.n+"</b><span>"+r.a.react+"</span></div>";
+  }).join("");
   drawMatrix();
 }
 render();
