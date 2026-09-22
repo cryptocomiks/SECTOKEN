@@ -20,9 +20,17 @@ tokenisées dans des pools AMM permissionnés sur blockchain publique.
 | 08 | La dynamique | Échec du CLARITY Act, bascule vers les régulateurs, 12 chantiers en cours |
 | 09 | Risques | Veto émetteur, trou d'information du week-end, fragmentation, fragilité juridique |
 | 10 | Chronologie | De xStocks (juillet 2025) à l'expiration de l'exemption (septembre 2031) |
+| — | Offre close | Bandeau « complet » rappelant le giveaway des 10 premiers lecteurs |
 
 La thèse du dossier : l'exemption ne récompense pas la décentralisation, elle récompense
 la conformité — ce qui inverse le classement des gagnants par rapport à la réaction des prix.
+
+## Bloc offre close
+
+Le bloc en fin de page indique que le giveaway des dix places est terminé — il sert de
+trace, pour que les lecteurs sachent qu'il y avait quelque chose à gagner. Pour changer
+le compte Instagram, cherchez `INSTAGRAM_HANDLE` dans `src/page.html`, puis relancez
+`node build.mjs`.
 
 ## Structure du projet
 

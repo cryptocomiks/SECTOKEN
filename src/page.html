@@ -269,6 +269,32 @@ input[type="number"],select{font-family:var(--mono);font-size:14px;background:va
   .prow{grid-template-columns:1fr;gap:8px}
 }
 
+/* ---------- closed offer ---------- */
+.offer{border-bottom:1px solid var(--line);padding-block:56px}
+.offerbox{border:1px solid var(--line-2);border-radius:8px;background:var(--surface);overflow:hidden}
+.closedbar{display:flex;align-items:center;gap:11px;padding:12px 26px;background:var(--amber-soft);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);flex-wrap:wrap}
+.closedbar span{width:7px;height:7px;border-radius:50%;background:var(--amber);flex:none}
+.offertop{padding:30px 26px 28px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.offertop>*{min-width:0}
+.offerh{font-family:var(--disp);font-size:clamp(23px,3.4vw,33px);font-weight:800;letter-spacing:-.025em;line-height:1.12;max-width:22ch;color:var(--ink-2)}
+.offerh em{font-style:normal;color:var(--ink)}
+.offerp{font-size:16px;color:var(--ink-2);margin-top:15px;max-width:60ch;line-height:1.55}
+.slotwrap{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.slots{display:flex;gap:4px}
+.slots i{width:11px;height:19px;border-radius:2px;background:var(--line-2);display:block}
+.slotlab{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.offeract{padding:0 26px 24px}
+.iglink{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12.5px;color:var(--accent);text-decoration:none;border:1px solid var(--line-2);border-radius:5px;padding:11px 17px}
+.iglink:hover{border-color:var(--accent);background:var(--accent-soft)}
+.offernote{padding:16px 26px 22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);line-height:1.6}
+.offernote b{color:var(--ink-2);font-weight:600}
+@media (max-width:720px){
+  .offertop{grid-template-columns:1fr;gap:20px}
+  .slotwrap{align-items:flex-start}
+  .closedbar,.offertop,.offeract,.offernote{padding-inline:18px}
+  .iglink{width:100%;justify-content:center}
+}
+
 /* ---------- risks ---------- */
 .risks{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:32px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
 .risk{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -955,6 +981,32 @@ html{scroll-behavior:smooth}
       <div class="tli key"><div class="d">17 septembre 2026</div><div class="t">La SEC publie l'ordre 34-106402 — l'Innovation Exemption. Cinq ans, neuf conditions, deux niveaux de plafond.</div></div>
       <div class="tli"><div class="d">21 septembre 2026</div><div class="t">Ondo lance la conversion <em>in-kind</em> avec Alpaca. HYPE inscrit un plus-haut historique à 95,97 $.</div></div>
       <div class="tli key"><div class="d">17 septembre 2031</div><div class="t">Expiration de l'exemption. Sans règle permanente d'ici là, le dispositif s'éteint.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bloc offre close. Compte Instagram : chercher INSTAGRAM_HANDLE. -->
+<section class="offer" id="offre">
+  <div class="wrap">
+    <div class="offerbox">
+      <div class="closedbar"><span></span>Complet — toutes les places ont été prises</div>
+      <div class="offertop">
+        <div>
+          <h2 class="offerh">Les <em>10 premiers lecteurs</em> ont reçu 30&nbsp;€ en crypto.</h2>
+          <p class="offerp">Une offre était ouverte au bas de ce dossier : 30&nbsp;€ en crypto pour les dix premières personnes qui m'écrivaient, sans inscription, sans dépôt et sans aucune condition. Les dix places sont parties. La prochaine sera annoncée sur Instagram.</p>
+        </div>
+        <div class="slotwrap">
+          <div class="slots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="slotlab">10 / 10 places prises</div>
+        </div>
+      </div>
+      <div class="offeract">
+        <!-- INSTAGRAM_HANDLE -->
+        <a class="iglink" href="https://www.instagram.com/crypto_comiks" target="_blank" rel="noopener">Suivre pour la prochaine → @crypto_comiks</a>
+      </div>
+      <div class="offernote">
+        <b>Offre personnelle, désormais close.</b> Elle n'était liée à aucune plateforme, aucun courtier et aucun partenariat commercial : c'était un cadeau, pas une promotion. Rien sur cette page ne constitue un conseil en investissement.
+      </div>
     </div>
   </div>
 </section>
