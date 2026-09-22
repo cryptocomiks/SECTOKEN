@@ -1,0 +1,1261 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Analyse approfondie de l'ordre SEC 34-106402 du 17 septembre 2026 et des plateformes qui en bénéficient : Coinbase, Robinhood, Ondo, Uniswap, Hyperliquid.">
+<style>
+  :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fafaf9}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<title>Dossier 34-106402</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --ground:#EDF0EC; --surface:#F9FBF8; --surface-2:#E4EAE3; --raise:#FFFFFF;
+  --line:#D2DACF; --line-2:#B6C2B1;
+  --ink:#101613; --ink-2:#46534C; --ink-3:#6C7A72;
+  --accent:#0B6E72; --accent-2:#0A585B; --accent-soft:rgba(11,110,114,.10); --on-accent:#F6FBFA;
+  --amber:#A25F0D; --amber-soft:rgba(162,95,13,.12);
+  --good:#1F6E47; --warn:#A25F0D; --bad:#AC3325;
+  --grid:rgba(16,22,19,.09); --shade:rgba(16,22,19,.04);
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --disp:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --maxw:1180px; --read:67ch;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --ground:#080B0A; --surface:#101614; --surface-2:#18201D; --raise:#1B2421;
+  --line:#242E2A; --line-2:#37443F;
+  --ink:#E9EFEB; --ink-2:#A2B0A9; --ink-3:#77857E;
+  --accent:#37AFAF; --accent-2:#5AC6C4; --accent-soft:rgba(55,175,175,.14); --on-accent:#05100F;
+  --amber:#E0A03C; --amber-soft:rgba(224,160,60,.14);
+  --good:#4FB37C; --warn:#E0A03C; --bad:#E0705F;
+  --grid:rgba(233,239,235,.09); --shade:rgba(233,239,235,.035);
+}}
+:root[data-theme="dark"]{
+  --ground:#080B0A; --surface:#101614; --surface-2:#18201D; --raise:#1B2421;
+  --line:#242E2A; --line-2:#37443F;
+  --ink:#E9EFEB; --ink-2:#A2B0A9; --ink-3:#77857E;
+  --accent:#37AFAF; --accent-2:#5AC6C4; --accent-soft:rgba(55,175,175,.14); --on-accent:#05100F;
+  --amber:#E0A03C; --amber-soft:rgba(224,160,60,.14);
+  --good:#4FB37C; --warn:#E0A03C; --bad:#E0705F;
+  --grid:rgba(233,239,235,.09); --shade:rgba(233,239,235,.035);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.05;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
+.read{max-width:var(--read)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- header ---------- */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;gap:18px;height:52px;max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
+.brandmark{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.brandmark span{color:var(--accent)}
+.navlinks{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);text-decoration:none;padding:6px 9px;border-radius:4px;white-space:nowrap}
+.navlinks a:hover{color:var(--ink);background:var(--shade)}
+.navlinks a[aria-current="true"]{color:var(--accent);background:var(--accent-soft)}
+.themebtn{flex:none;font-family:var(--mono);font-size:11px;color:var(--ink-2);background:transparent;border:1px solid var(--line);border-radius:4px;padding:5px 9px;cursor:pointer}
+.themebtn:hover{border-color:var(--line-2);color:var(--ink)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0}
+
+/* ---------- hero ---------- */
+.hero{border-bottom:1px solid var(--line);padding-block:56px 0}
+.docket{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+.docket b{color:var(--accent);font-weight:600}
+.herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px 56px;margin-top:26px;align-items:end}
+.herogrid>*{min-width:0}
+h1.headline{font-size:clamp(36px,5.7vw,68px);margin-top:0;max-width:14ch}
+.herotext{display:flex;flex-direction:column;gap:22px;padding-bottom:4px}
+.standfirst{font-size:clamp(17px,1.9vw,19.5px);color:var(--ink-2);margin-top:0;line-height:1.55}
+.thesis{margin-top:0;border-left:3px solid var(--accent);padding:2px 0 2px 18px;font-size:17px}
+.thesis b{font-weight:600;color:var(--ink)}
+.statrow{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border-top:1px solid var(--line)}
+.stat{padding:20px 18px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .v{font-family:var(--disp);font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.stat .k{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-top:10px}
+.stat .n{font-size:14px;color:var(--ink-2);margin-top:6px;line-height:1.4}
+
+/* ---------- sections ---------- */
+section{border-bottom:1px solid var(--line);padding-block:64px}
+.sechead{display:flex;gap:18px;align-items:baseline;margin-bottom:10px}
+.secnum{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em;flex:none;padding-top:6px}
+h2{font-size:clamp(27px,4.2vw,42px);max-width:20ch}
+.lede{color:var(--ink-2);margin-top:16px;font-size:18px}
+.body-col{margin-top:26px;display:flex;flex-direction:column;gap:18px}
+.body-col p{max-width:var(--read)}
+.stack{display:flex;flex-direction:column;gap:14px}
+
+/* ---------- generic surfaces ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.pad{padding:22px}
+.hairline{border-top:1px solid var(--line)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap}
+.tag.good{color:var(--good);border-color:color-mix(in srgb,var(--good) 45%,transparent);background:color-mix(in srgb,var(--good) 10%,transparent)}
+.tag.warn{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent);background:color-mix(in srgb,var(--warn) 10%,transparent)}
+.tag.bad{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 45%,transparent);background:color-mix(in srgb,var(--bad) 10%,transparent)}
+.tag.acc{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);background:var(--accent-soft)}
+
+/* ---------- conditions ---------- */
+.cond-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:34px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.cond{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:0;text-align:left;background:transparent;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column}
+.cond:nth-child(3n){border-right:0}
+.cond:nth-last-child(-n+3){border-bottom:0}
+.cond-in{padding:18px 18px 20px;display:flex;flex-direction:column;gap:9px;height:100%}
+.cond:hover{background:var(--shade)}
+.cond[aria-expanded="true"]{background:var(--accent-soft)}
+.cond .ix{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em}
+.cond h3{font-family:var(--disp);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.cond .sum{font-size:14.5px;color:var(--ink-2);line-height:1.45}
+.cond .more{font-size:14.5px;color:var(--ink);border-top:1px dashed var(--line-2);padding-top:11px;margin-top:2px}
+.cond .who{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.condhint{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:12px}
+
+/* ---------- tiers + calculator ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;align-items:start}
+table.data{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:13.5px}
+table.data th{text-align:left;font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0 10px 9px;border-bottom:1px solid var(--line-2)}
+table.data td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-variant-numeric:tabular-nums}
+table.data tr:last-child td{border-bottom:0}
+table.data td.name{font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:-.01em}
+.scroller{overflow-x:auto;max-width:100%}
+.two>*,.chart-grid>*,.scorewrap>*,.rrow>*,.barrow>*,.acols>*,.facts>*,.circle-grid>*,.cond-grid>*,.risks>*{min-width:0}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+input[type="number"],select{font-family:var(--mono);font-size:14px;background:var(--raise);color:var(--ink);border:1px solid var(--line-2);border-radius:4px;padding:9px 10px;width:100%}
+.calcout{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+.calcout .big{font-family:var(--disp);font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+.calcout .sub{font-family:var(--mono);font-size:12.5px;color:var(--ink-2)}
+.preset{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.preset button{font-family:var(--mono);font-size:11px;padding:5px 9px;border:1px solid var(--line-2);background:transparent;color:var(--ink-2);border-radius:3px;cursor:pointer}
+.preset button:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- charts ---------- */
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
+.chart h3{font-family:var(--disp);font-size:17px;font-weight:600;letter-spacing:-.01em}
+.chart .csub{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:6px;line-height:1.45}
+.chart svg{display:block;width:100%;height:auto;margin-top:16px;overflow:visible}
+.csrc{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:12px;border-top:1px solid var(--line);padding-top:9px}
+.barlist{display:flex;flex-direction:column;gap:13px;margin-top:18px}
+.barrow{display:grid;grid-template-columns:130px 1fr auto;gap:12px;align-items:center}
+.barrow .bl{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);text-align:right}
+.bartrack{height:16px;background:var(--shade);border-radius:3px;overflow:hidden}
+.barfill{height:100%;background:var(--accent);border-radius:0 4px 4px 0;transition:width .5s cubic-bezier(.22,.7,.3,1)}
+.barfill.alt{background:var(--amber)}
+.barval{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--ink);min-width:62px;text-align:right}
+
+/* ---------- simulator ---------- */
+.sim{margin-top:32px;border:1px solid var(--line-2);border-radius:6px;background:var(--surface);overflow:hidden}
+.simhead{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--surface-2);flex-wrap:wrap}
+.simhead .st{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.simdots{display:flex;gap:5px;margin-left:auto}
+.simdots i{width:7px;height:7px;border-radius:50%;background:var(--line-2);display:block}
+.simdots i.on{background:var(--accent)}
+.simdots i.done{background:var(--ink-3)}
+.simbody{padding:26px 20px 24px}
+.simq{font-family:var(--disp);font-size:clamp(20px,3vw,26px);font-weight:600;letter-spacing:-.015em;line-height:1.2;max-width:30ch}
+.simwhy{font-size:14.5px;color:var(--ink-2);margin-top:10px;max-width:58ch}
+.simopts{display:flex;flex-direction:column;gap:9px;margin-top:22px;max-width:640px}
+.simopt{display:flex;gap:12px;align-items:flex-start;text-align:left;font:inherit;font-size:15.5px;color:var(--ink);background:var(--raise);border:1px solid var(--line-2);border-radius:5px;padding:13px 15px;cursor:pointer;transition:border-color .15s,background .15s}
+.simopt:hover{border-color:var(--accent);background:var(--accent-soft)}
+.simopt .k{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:4px;flex:none}
+.simfoot{display:flex;gap:10px;align-items:center;padding:13px 20px;border-top:1px solid var(--line);background:var(--surface-2);flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:8px 14px;border-radius:4px;border:1px solid var(--line-2);background:transparent;color:var(--ink-2);cursor:pointer}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-2);border-color:var(--accent-2);color:var(--on-accent)}
+.verdict{display:flex;flex-direction:column;gap:18px}
+.vhead{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.vbadge{font-family:var(--disp);font-size:clamp(24px,3.6vw,34px);font-weight:800;letter-spacing:-.025em;line-height:1.05}
+.vbadge.ok{color:var(--good)} .vbadge.mid{color:var(--warn)} .vbadge.no{color:var(--bad)}
+.vlist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.vitem{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:12px 15px;border-bottom:1px solid var(--line);font-size:14.5px;background:var(--raise)}
+.vitem:last-child{border-bottom:0}
+.vitem .m{font-family:var(--mono);font-weight:600;font-size:13px}
+.vitem .m.ok{color:var(--good)} .vitem .m.no{color:var(--bad)} .vitem .m.mid{color:var(--warn)}
+.vitem b{font-weight:600}
+
+/* ---------- actors ---------- */
+.actors{display:flex;flex-direction:column;gap:0;margin-top:34px;border-top:1px solid var(--line-2)}
+.actor{border-bottom:1px solid var(--line);padding-block:30px}
+.ahead{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.aticker{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--on-accent);background:var(--accent);padding:5px 9px;border-radius:3px;flex:none;margin-top:4px}
+.aticker.alt{background:var(--amber)}
+.aname{font-family:var(--disp);font-size:clamp(26px,3.6vw,34px);font-weight:800;letter-spacing:-.025em;line-height:1}
+.arole{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
+.ameta{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.averdict{margin-top:20px;border-left:3px solid var(--accent);padding-left:16px;font-size:17.5px;max-width:64ch}
+.averdict b{font-weight:600}
+.acols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.acol{padding:17px 18px;border-right:1px solid var(--line)}
+.acol:last-child{border-right:0}
+.acol h4{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.acol ul{margin:12px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.acol li{font-size:14.5px;line-height:1.45;padding-left:15px;position:relative;color:var(--ink-2)}
+.acol li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1.5px;background:var(--accent)}
+.acol.risk li::before{background:var(--bad)}
+.acol.fix li::before{background:var(--amber)}
+.acol li b{color:var(--ink);font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:0;margin-top:20px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.fact{flex:1 1 150px;padding:13px 15px;border-right:1px solid var(--line);background:var(--surface)}
+.fact:last-child{border-right:0}
+.fact .fv{font-family:var(--mono);font-size:16px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.fact .fk{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-top:5px;line-height:1.3}
+
+/* ---------- scoring ---------- */
+.scorewrap{display:grid;grid-template-columns:300px 1fr;gap:24px;margin-top:32px;align-items:start}
+.weights{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 66px)}
+.weights h3{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.wrow{margin-top:16px}
+.wrow .wl{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.wrow .wl b{color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600}
+.wrow input[type=range]{width:100%;margin-top:7px;accent-color:var(--accent);height:18px}
+.wnote{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:16px;border-top:1px solid var(--line);padding-top:12px;line-height:1.5}
+.rank{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.rrow{display:grid;grid-template-columns:30px 150px 1fr 66px;gap:14px;align-items:center;padding:15px 17px;border-bottom:1px solid var(--line);transition:background .2s}
+.rrow:last-child{border-bottom:0}
+.rrow .rk{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.rrow .rn{font-family:var(--disp);font-size:17px;font-weight:600;letter-spacing:-.01em}
+.rrow .rn small{display:block;font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--ink-3);letter-spacing:.05em;margin-top:3px}
+.rrow .rs{font-family:var(--disp);font-size:22px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.rtrack{height:22px;background:var(--shade);border-radius:3px;overflow:hidden}
+.rfill{height:100%;border-radius:0 4px 4px 0;background:var(--accent);transition:width .45s cubic-bezier(.22,.7,.3,1)}
+.matrix{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
+.detail-tbl{margin-top:20px}
+
+/* ---------- second circle ---------- */
+.circle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.cc{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:17px 18px;display:flex;flex-direction:column;gap:9px}
+.cc .cn{font-family:var(--disp);font-size:18px;font-weight:600;letter-spacing:-.015em}
+.cc .cr{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.cc p{font-size:14.5px;color:var(--ink-2);line-height:1.45}
+
+/* ---------- risks ---------- */
+.risks{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:32px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.risk{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.risk:nth-child(2n){border-right:0}
+.risk:nth-last-child(-n+2){border-bottom:0}
+.risk h3{font-family:var(--disp);font-size:18px;font-weight:600;letter-spacing:-.015em;margin-top:10px}
+.risk p{font-size:14.5px;color:var(--ink-2);margin-top:9px;line-height:1.5}
+
+/* ---------- timeline ---------- */
+.tl{margin-top:32px;border-left:1px solid var(--line-2);padding-left:0;display:flex;flex-direction:column}
+.tli{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:13px 0 13px 20px;position:relative;border-bottom:1px solid var(--line)}
+.tli:last-child{border-bottom:0}
+.tli::before{content:"";position:absolute;left:-4px;top:21px;width:7px;height:7px;border-radius:50%;background:var(--line-2)}
+.tli.key::before{background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.tli .d{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.04em;padding-top:3px}
+.tli.key .d{color:var(--accent)}
+.tli .t{font-size:15.5px;color:var(--ink-2)}
+.tli.key .t{color:var(--ink);font-weight:600}
+
+/* ---------- footer ---------- */
+footer{padding-block:48px 64px;font-size:14.5px;color:var(--ink-2)}
+.srcgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 26px;margin-top:18px;font-family:var(--mono);font-size:12px}
+.srcgrid a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2);padding-block:5px;display:block}
+.srcgrid a:hover{color:var(--accent);border-color:var(--accent)}
+.disclaimer{margin-top:30px;border:1px solid var(--line-2);border-radius:6px;padding:16px 18px;font-size:13.5px;color:var(--ink-2);background:var(--shade)}
+
+@media (max-width:900px){
+  .herogrid{grid-template-columns:1fr;align-items:start;gap:24px}
+  h1.headline{max-width:16ch}
+}
+@media (max-width:980px){
+  .statrow{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .cond-grid{grid-template-columns:1fr 1fr}
+  .cond:nth-child(3n){border-right:1px solid var(--line)}
+  .cond:nth-child(2n){border-right:0}
+  .cond:nth-last-child(-n+3){border-bottom:1px solid var(--line)}
+  .cond:nth-last-child(-n+2){border-bottom:0}
+  .two,.chart-grid,.scorewrap{grid-template-columns:1fr}
+  .weights{position:static}
+  .acols{grid-template-columns:1fr}
+  .acol{border-right:0;border-bottom:1px solid var(--line)}
+  .acol:last-child{border-bottom:0}
+  .circle-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  section{padding-block:46px}
+  .sechead{flex-direction:column;gap:6px}
+  .secnum{padding-top:0}
+  .statrow{grid-template-columns:1fr}
+  .stat{border-right:0;border-bottom:1px solid var(--line)}
+  .stat:last-child{border-bottom:0}
+  .cond-grid{grid-template-columns:1fr}
+  .cond{border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .cond:last-child{border-bottom:0!important}
+  .circle-grid,.risks{grid-template-columns:1fr}
+  .risk{border-right:0}
+  .rrow{grid-template-columns:24px 1fr 56px;gap:10px}
+  .rrow .rtrack{grid-column:1/-1}
+  .barrow{grid-template-columns:96px 1fr auto}
+  .barrow .bl{font-size:11.5px}
+  .tli{grid-template-columns:1fr;gap:5px}
+  .srcgrid{grid-template-columns:1fr}
+  .navlinks{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brandmark">Dossier <span>34-106402</span></div>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="#ordre">L'ordre</a>
+      <a href="#limites">Les plafonds</a>
+      <a href="#marche">Le marché</a>
+      <a href="#simulateur">Simulateur</a>
+      <a href="#acteurs">Les 5 acteurs</a>
+      <a href="#scoring">Classement</a>
+      <a href="#second">2ᵉ cercle</a>
+      <a href="#risques">Risques</a>
+    </nav>
+    <button class="themebtn" id="themebtn" type="button" aria-label="Changer de thème">Thème</button>
+  </div>
+  <div class="progress" id="progress"></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="docket">
+      <span>Release No. <b>34-106402</b></span><span>File No. 4-927</span><span>17 septembre 2026</span><span>Expiration : 17 septembre 2031</span>
+    </div>
+    <div class="herogrid">
+      <h1 class="headline">La SEC vient d'ouvrir Wall Street à la blockchain. Pour cinq ans.</h1>
+      <div class="herotext">
+      <p class="standfirst">Le 17 septembre 2026, la SEC a signé l'« Innovation Exemption » : des actions américaines réelles peuvent désormais se négocier dans des pools AMM sur des blockchains publiques, sans que le lieu de négociation soit enregistré comme bourse. Voici qui en profite vraiment — et pourquoi ce n'est pas qui vous croyez.</p>
+      <p class="thesis">La thèse de ce dossier : <b>l'exemption ne récompense pas la décentralisation, elle récompense la conformité.</b> Les neuf conditions de l'ordre transforment la question « qui a le meilleur produit crypto ? » en « qui peut être une entité américaine, vérifier l'identité derrière chaque wallet, synchroniser ses halts et obtenir le feu vert des émetteurs ? ». Le classement des gagnants s'en trouve inversé par rapport à la réaction des prix.</p>
+      </div>
+    </div>
+    <div class="statrow">
+      <div class="stat">
+        <div class="v">5 ans</div>
+        <div class="k">Durée de l'exemption</div>
+        <div class="n">Un pilote, pas une règle. Sans rulemaking permanent d'ici 2031, le cadre expire.</div>
+      </div>
+      <div class="stat">
+        <div class="v">9</div>
+        <div class="k">Conditions cumulatives</div>
+        <div class="n">Entité US, KYC par wallet, contrats publics, droits d'actionnaire complets, halts synchronisés…</div>
+      </div>
+      <div class="stat">
+        <div class="v">75</div>
+        <div class="k">Symboles Tier 1 max.</div>
+        <div class="n">Par lieu de négociation, sur l'univers S&amp;P 500 / Russell 1000.</div>
+      </div>
+      <div class="stat">
+        <div class="v">0,25 %</div>
+        <div class="k">du volume quotidien moyen</div>
+        <div class="n">Le plafond par titre Tier 1. C'est volontairement minuscule.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="ordre">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 01</div><h2>Ce que la SEC a réellement signé</h2></div>
+    <div class="body-col">
+      <p class="lede read">Deux jours après l'enlisement du CLARITY Act au Sénat, la SEC a fait une partie du travail elle-même — par ordre administratif plutôt que par la loi. L'ordre exempte les « Tokenized Securities Venues » (TSV) de la définition de <em>exchange</em> au sens du Securities Exchange Act de 1934, et exempte au passage les teneurs de marché qui fournissent de la liquidité sur capital propre de l'enregistrement comme <em>dealer</em>.</p>
+      <p class="read">La mécanique autorisée est précise : des actions NMS réelles, tokenisées par un tiers non affilié, échangées dans des <b>pools AMM permissionnés</b> déployés sur une blockchain publique sans permission. Pas un carnet d'ordres. Pas un dérivé. Pas un actif OTC. Et surtout : pas d'anonymat.</p>
+      <p class="read">Le président de la SEC Paul Atkins l'a présenté comme un pont, pas comme une destination : le dispositif « doit être suivi d'un rulemaking durable pour que les marchés onchain restent une voie viable ». Traduction : cinq ans pour produire la preuve empirique — prix efficients, technologie résiliente, liquidité suffisante, protection effective de l'investisseur — ou le cadre meurt.</p>
+    </div>
+    <div class="cond-grid" id="condgrid"></div>
+    <p class="condhint">Cliquez sur une condition pour voir ce qu'elle implique concrètement — et qui elle élimine.</p>
+  </div>
+</section>
+
+<section id="limites">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 02</div><h2>Les plafonds : pourquoi personne ne fera de chiffre d'affaires en 2027</h2></div>
+    <p class="lede read">La partie la plus sous-estimée de l'ordre n'est pas ce qu'il autorise, c'est à quelle échelle. Les TSV sont classés selon le plan LULD, et chaque niveau vient avec une double limite : un nombre de symboles et un pourcentage du volume quotidien moyen du titre.</p>
+    <div class="two">
+      <div class="panel pad">
+        <div class="eyebrow">Les deux niveaux</div>
+        <div class="scroller"><table class="data" style="margin-top:16px">
+          <thead><tr><th>Niveau</th><th>Univers</th><th>Symboles</th><th>Plafond / titre</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Tier 1</td><td>S&amp;P 500, Russell 1000, ETP &gt; 2 M$ de volume notionnel</td><td>75</td><td>0,25 % du VQM</td></tr>
+            <tr><td class="name">Tier 2</td><td>Autres actions NMS (hors <em>rights</em> et <em>warrants</em>)</td><td>250</td><td>2,5 % du VQM</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size:14.5px;color:var(--ink-2);margin-top:16px">Le premier dépassement de seuil sur un titre ne déclenche rien. Chaque dépassement suivant impose au TSV — <em>et à tous les TSV affiliés</em> — une suspension de trois mois sur ce titre, la notification des participants et la mise à jour de l'avis public du lieu. C'est une sanction lourde, volontairement dissuasive.</p>
+      </div>
+      <div class="panel pad">
+        <div class="eyebrow">Calculateur de plafond</div>
+        <p style="font-size:14.5px;color:var(--ink-2);margin-top:10px">Entrez le volume quotidien moyen d'un titre pour voir ce qu'un TSV peut légalement y échanger en une journée.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px">
+          <div class="field">
+            <label for="advIn">Volume quotidien moyen (actions)</label>
+            <input type="number" id="advIn" value="180000000" min="0" step="100000">
+          </div>
+          <div class="field">
+            <label for="pxIn">Cours de l'action ($)</label>
+            <input type="number" id="pxIn" value="185" min="0" step="0.01">
+          </div>
+          <div class="field" style="grid-column:1/-1">
+            <label for="tierIn">Niveau LULD</label>
+            <select id="tierIn"><option value="0.0025">Tier 1 — 0,25 % (S&amp;P 500 / Russell 1000)</option><option value="0.025">Tier 2 — 2,5 % (autres actions NMS)</option></select>
+          </div>
+        </div>
+        <div class="preset">
+          <button type="button" data-adv="180000000" data-px="185">NVDA (approx.)</button>
+          <button type="button" data-adv="52000000" data-px="255">AAPL (approx.)</button>
+          <button type="button" data-adv="95000000" data-px="410">TSLA (approx.)</button>
+          <button type="button" data-adv="4000000" data-px="120">Mid-cap Tier 2</button>
+        </div>
+        <div class="calcout">
+          <div class="big mono" id="capShares">—</div>
+          <div class="sub" id="capNotional">—</div>
+          <div class="sub" id="capNote" style="color:var(--ink-3);margin-top:6px">—</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:var(--ink-2);margin-top:24px;max-width:var(--read)">Conséquence pratique : sur les cinq prochaines années, le trading onchain d'actions américaines est un <b>laboratoire réglementaire</b>, pas une ligne de revenus. Toute thèse d'investissement qui repose sur des volumes massifs avant 2029 se heurte à ce plafond. Ce qui se joue vraiment, c'est l'option : qui sera en place, conforme et opérationnel le jour où le plafond saute.</p>
+  </div>
+</section>
+
+<section id="marche">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 03</div><h2>Le marché tel qu'il est vraiment, avant l'exemption</h2></div>
+    <p class="lede read">Avant de parier sur des gagnants, il faut mesurer la base de départ. Les actions tokenisées existent déjà — à l'étranger, hors du cadre américain — et elles pèsent encore très peu. C'est simultanément l'argument baissier et la taille de l'option.</p>
+    <div class="chart-grid">
+      <div class="chart">
+        <h3>Capitalisation des actions tokenisées onchain</h3>
+        <div class="csub">Trois relevés sourcés en 2026. La ligne entre les points est une interpolation, pas une mesure.</div>
+        <div id="chartGrowth"></div>
+        <div class="csrc">Sources : Token Terminal via Cointelegraph (3,1 Md$, début sept. 2026) ; Cointelegraph (2,3 Md$, record) ; « sous 1 Md$ en début d'année ».</div>
+      </div>
+      <div class="chart">
+        <h3>Où vivent ces actions</h3>
+        <div class="csub">Part de la capitalisation onchain par blockchain d'émission.</div>
+        <div class="barlist" id="chainBars"></div>
+        <div class="csrc">Source : Cointelegraph, sept. 2026. Ethereum 34 %, Solana 23 %, reste du marché 43 %.</div>
+      </div>
+      <div class="chart">
+        <h3>Qui émet ces actions</h3>
+        <div class="csub">Encours onchain par émetteur / plateforme, en millions de dollars.</div>
+        <div class="barlist" id="issuerBars"></div>
+        <div class="csrc">Sources : Cointelegraph, Kraken Blog, rwa.xyz (sept. 2026). Ondo reste le premier émetteur d'actions tokenisées.</div>
+      </div>
+      <div class="chart">
+        <h3>Les actions dans l'univers RWA</h3>
+        <div class="csub">Répartition du marché des actifs réels tokenisés, ~34 Md$ au total.</div>
+        <div class="barlist" id="rwaBars"></div>
+        <div class="csrc">Sources : rwa.xyz / synthèses de marché, 2026. Les actions ne pèsent encore que ~5,5 % du RWA.</div>
+      </div>
+    </div>
+    <div class="panel pad" style="margin-top:24px">
+      <div class="eyebrow">La lecture qui compte</div>
+      <p style="margin-top:12px;max-width:var(--read);font-size:16px">Les actions tokenisées représentent environ <b>3 Md$</b> face à <b>15 Md$</b> de bons du Trésor tokenisés. La tokenisation a déjà gagné sur les produits de taux ; elle n'a pas encore commencé sur les actions. Simultanément, xStocks (Kraken / Backed) a traité plus de <b>25 Md$ de volume cumulé</b> en moins de huit mois pour seulement ~507 M$ d'encours : la rotation est extrêmement rapide. Ce n'est pas un marché de détention, c'est un marché de négociation — exactement ce que l'exemption encadre, et exactement ce que les plafonds de volume brident.</p>
+    </div>
+  </div>
+</section>
+
+<section id="simulateur">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 04</div><h2>Votre produit passe-t-il l'exemption ?</h2></div>
+    <p class="lede read">Huit questions, tirées directement des conditions de l'ordre. Certaines réponses sont éliminatoires — l'exemption est cumulative, pas pondérée. Testez un produit réel (les tokens Robinhood en Europe, les perps HIP-3 de Hyperliquid, les actions tokenisées de Coinbase sur Base) et voyez où ça casse.</p>
+    <div class="sim" id="sim">
+      <div class="simhead">
+        <div class="st" id="simStep">Question 1 / 8</div>
+        <div class="simdots" id="simDots"></div>
+      </div>
+      <div class="simbody" id="simBody"></div>
+      <div class="simfoot">
+        <button class="btn" type="button" id="simBack">Précédent</button>
+        <button class="btn" type="button" id="simReset">Recommencer</button>
+        <span class="mono" style="font-size:11px;color:var(--ink-3);margin-left:auto">Outil pédagogique — ne constitue pas un avis juridique.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="acteurs">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 05</div><h2>Les cinq acteurs, passés au crible de l'ordre</h2></div>
+    <p class="lede read">Deux sociétés cotées, trois protocoles. Chacun se présente comme bénéficiaire ; chacun occupe en réalité une position très différente vis-à-vis des neuf conditions. L'ordre de lecture va du mieux placé au plus exposé.</p>
+
+    <div class="actors">
+
+      <article class="actor">
+        <div class="ahead">
+          <div class="aticker">COIN</div>
+          <div>
+            <div class="aname">Coinbase</div>
+            <div class="arole">Le seul acteur verticalement intégré</div>
+          </div>
+          <div class="ameta"><span class="tag good">Produit déjà quasi conforme</span><span class="tag acc">Chaîne maison</span></div>
+        </div>
+        <p class="averdict">Coinbase est le candidat le plus évident au statut de TSV, et pour une raison mécanique : <b>ses actions tokenisées sont déjà des créances directes sur l'action réelle, pas des synthétiques.</b> Goldman Sachs l'a relevé dès le lendemain de l'ordre — les produits Coinbase possèdent déjà plusieurs des caractéristiques exigées. Le travail restant est structurel, pas conceptuel.</p>
+        <div class="facts">
+          <div class="fact"><div class="fv">24 août 2026</div><div class="fk">Lancement des actions tokenisées sur Base</div></div>
+          <div class="fact"><div class="fv">19 titres</div><div class="fk">13 au départ, +6 (AMZN, MSFT, TSLA…)</div></div>
+          <div class="fact"><div class="fv">227,7 M$</div><div class="fk">Volume DEX en ~30 jours</div></div>
+          <div class="fact"><div class="fv">194 $</div><div class="fk">COIN au 21 sept. 2026 (plus-haut 52 s. : 402 $)</div></div>
+        </div>
+        <div class="acols">
+          <div class="acol">
+            <h4>Ce qui joue pour</h4>
+            <ul>
+              <li><b>Base</b> : Coinbase possède la chaîne, capte les revenus de séquenceur et contrôle le standard d'émission (B20, format compatible ERC-20 bâti sur des précompiles Rust).</li>
+              <li><b>Structure adossée</b> : des teneurs de marché institutionnels achètent l'action réelle, conservée par Alpaca, courtier-dépositaire régulé, dans une structure <em>bankruptcy-remote</em>.</li>
+              <li><b>Le reste de la pile</b> : custody institutionnel, licences de broker-dealer, Coinbase Tokenize, et l'économie de l'USDC partagée avec Circle — la condition de libellé en dollars de l'ordre pousse mécaniquement vers un stablecoin de règlement.</li>
+              <li><b>KYC au niveau du wallet</b> : c'est l'exigence la plus hostile aux protocoles, et c'est déjà le métier de Coinbase.</li>
+            </ul>
+          </div>
+          <div class="acol fix">
+            <h4>Ce qu'il faut corriger</h4>
+            <ul>
+              <li>Le montage actuel est <b>supervisé par le régulateur d'Abu Dhabi (ADGM)</b> et réservé aux juridictions hors États-Unis. Un TSV doit être <b>constitué aux États-Unis avec un bureau américain</b> — l'architecture doit être répliquée en domestique.</li>
+              <li>Les droits de <b>gouvernance</b> (vote, actions de société) doivent être transmis au détenteur du token, pas seulement les dividendes.</li>
+              <li><b>Tokenisation par un tiers non affilié</b> : l'ordre exige une notification écrite confirmant que l'action a été tokenisée par un tiers indépendant. Coinbase devra s'appuyer sur un émetteur externe plutôt que tokeniser lui-même.</li>
+              <li>Obtenir l'absence d'objection de 19 émetteurs — puis de 75 — dans la fenêtre de 30 jours.</li>
+            </ul>
+          </div>
+          <div class="acol risk">
+            <h4>Ce qui peut mal tourner</h4>
+            <ul>
+              <li>Le plafond de 0,25 % du VQM rend la contribution au résultat <b>négligeable avant 2029</b>. Le marché ne peut pas re-rater l'action sur des revenus qui n'existeront pas.</li>
+              <li>Les bourses traditionnelles ne restent pas immobiles : le même cadre leur est ouvert, avec un avantage décisif sur la relation émetteur.</li>
+              <li>COIN se traite à moins de la moitié de son plus-haut de 52 semaines : le titre est piloté par le cycle crypto, pas par cette ligne de produit.</li>
+              <li>Cannibalisation partielle : un token qui se négocie 24/7 à frais réduits concurrence les propres carnets de Coinbase.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="actor">
+        <div class="ahead">
+          <div class="aticker">HOOD</div>
+          <div>
+            <div class="aname">Robinhood</div>
+            <div class="arole">La meilleure distribution, le pire produit actuel</div>
+          </div>
+          <div class="ameta"><span class="tag bad">Structure actuelle exclue</span><span class="tag good">Distribution retail US</span></div>
+        </div>
+        <p class="averdict">Vlad Tenev a salué l'ordre le jour même — « la tokenisation arrive en Amérique […] c'est un bon jour pour l'innovation américaine ». C'est sincère, et c'est aussi un aveu : <b>les stock tokens que Robinhood distribue aujourd'hui en Europe sont précisément la structure que l'ordre exclut.</b> L'ordre écarte explicitement les « tokenized linked securities » et les « tokenized security-based swaps » — c'est-à-dire l'architecture derrière les tokens SpaceX et OpenAI de Robinhood.</p>
+        <div class="facts">
+          <div class="fact"><div class="fv">1er juil. 2026</div><div class="fk">Mainnet de Robinhood Chain (L2 Arbitrum)</div></div>
+          <div class="fact"><div class="fv">~200</div><div class="fk">Stock tokens déjà émis</div></div>
+          <div class="fact"><div class="fv">120+ pays</div><div class="fk">Couverture actuelle, hors États-Unis</div></div>
+          <div class="fact"><div class="fv">119,82 $</div><div class="fk">HOOD au 21 sept. 2026 (plus-haut 52 s. : 153,86 $)</div></div>
+        </div>
+        <div class="acols">
+          <div class="acol">
+            <h4>Ce qui joue pour</h4>
+            <ul>
+              <li><b>Le seul des cinq à posséder les trois briques</b> : une base de clients particuliers américains massive, une licence de courtier, et sa propre blockchain. Un TSV doit vérifier l'identité derrière chaque wallet — c'est littéralement le métier d'un courtier.</li>
+              <li>Tenev a <b>déjà annoncé la trajectoire</b> : rachat 1 pour 1 en actions sous-jacentes et droits de vote. Ce n'est pas un pivot forcé, c'est un plan pré-existant.</li>
+              <li>Robinhood Chain lui donne le contrôle de la couche d'exécution, comme Base pour Coinbase.</li>
+              <li>Le réflexe d'acquisition de comptes de Robinhood en fait le distributeur naturel d'un produit nouveau et mal compris du grand public.</li>
+            </ul>
+          </div>
+          <div class="acol fix">
+            <h4>Ce qu'il faut corriger</h4>
+            <ul>
+              <li><b>Refonte complète de la structure du token</b> : passer d'une exposition au prix (dérivé) à une créance directe sur l'action réelle. C'est un changement d'architecture juridique, pas un paramètre.</li>
+              <li>Ajouter <b>dividendes et droits de vote</b> effectifs au niveau du détenteur du token.</li>
+              <li>Les tokens sur sociétés non cotées (SpaceX, OpenAI) restent définitivement hors cadre : l'exemption ne couvre que les actions NMS — <b>ni l'OTC, ni le non-coté</b>.</li>
+              <li>Faire tokeniser par un tiers non affilié, ce qui coupe une partie de l'intégration verticale recherchée.</li>
+            </ul>
+          </div>
+          <div class="acol risk">
+            <h4>Ce qui peut mal tourner</h4>
+            <ul>
+              <li><b>Auto-cannibalisation</b> : l'essentiel des revenus actions de Robinhood vient du flux d'ordres classique. Un rail onchain 24/7 à frais réduits attaque sa propre base.</li>
+              <li>Le calendrier : un lancement américain avant fin 2027 est le scénario consensuel, mais il dépend d'une refonte produit et de l'accord de dizaines d'émetteurs.</li>
+              <li>Risque de réputation inversé : Robinhood a construit l'attente d'actions tokenisées sur des produits que le régulateur américain vient d'exclure.</li>
+              <li>Le titre a déjà beaucoup intégré la narration tokenisation ; la déception est asymétrique.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="actor">
+        <div class="ahead">
+          <div class="aticker alt">ONDO</div>
+          <div>
+            <div class="aname">Ondo Finance</div>
+            <div class="arole">L'usine à tokens que l'ordre rend obligatoire</div>
+          </div>
+          <div class="ameta"><span class="tag acc">Premier émetteur onchain</span><span class="tag warn">Capture de valeur faible</span></div>
+        </div>
+        <p class="averdict">L'insight le plus négligé de l'ordre : il exige que le TSV notifie par écrit à la SEC que <b>l'action a été tokenisée par un tiers non affilié.</b> Autrement dit, le régulateur vient de créer structurellement un rôle d'émetteur indépendant — et de l'interdire aux lieux de négociation eux-mêmes. Ondo est aujourd'hui le premier fournisseur de ce service, avec ~955 M$ d'actions tokenisées onchain.</p>
+        <div class="facts">
+          <div class="fact"><div class="fv">955 M$</div><div class="fk">Encours d'actions tokenisées émises</div></div>
+          <div class="fact"><div class="fv">~3,6 Md$</div><div class="fk">Actifs distribués, 441 produits (rwa.xyz, 22 sept.)</div></div>
+          <div class="fact"><div class="fv">21 sept. 2026</div><div class="fk">Lancement de la conversion <em>in-kind</em></div></div>
+          <div class="fact"><div class="fv">0,43 $</div><div class="fk">ONDO, capitalisation ~2,06 Md$</div></div>
+        </div>
+        <div class="acols">
+          <div class="acol">
+            <h4>Ce qui joue pour</h4>
+            <ul>
+              <li><b>La conversion <em>in-kind</em>, lancée quatre jours après l'ordre</b>, avec l'Instant Tokenization Network d'Alpaca : les institutions apportent leurs actions existantes pour frapper des tokens, ou rachètent des tokens contre les actions. Live sur Ethereum et BNB Chain.</li>
+              <li>C'est exactement la plomberie du marché primaire dont un TSV a besoin pour que son pool AMM ait de la profondeur et des écarts serrés.</li>
+              <li>Position de tiers : Ondo n'exploite pas de bourse américaine, donc il peut servir <b>plusieurs TSV concurrents</b> sans conflit — Coinbase, Robinhood et un futur entrant peuvent tous être clients.</li>
+              <li>Ondo Chain et l'infrastructure RWA existante lui donnent une longueur d'avance opérationnelle sur les nouveaux entrants.</li>
+            </ul>
+          </div>
+          <div class="acol fix">
+            <h4>Ce qu'il faut corriger</h4>
+            <ul>
+              <li>Le test décisif porte sur les <b>droits de gouvernance</b>. L'adossement 1:1 et le rachat sont acquis ; la transmission effective du droit de vote au détenteur du token l'est beaucoup moins.</li>
+              <li>Des analyses classent encore les produits Ondo parmi les expositions au prix plutôt que les créances directes — cette ambiguïté doit être levée publiquement.</li>
+              <li>Les conversions doivent exister sur les chaînes où les TSV américains déploieront réellement leurs pools (Base, Solana, Ethereum), pas seulement BNB Chain.</li>
+            </ul>
+          </div>
+          <div class="acol risk">
+            <h4>Ce qui peut mal tourner</h4>
+            <ul>
+              <li><b>Le token ONDO n'est pas une part du capital d'Ondo Finance.</b> C'est le problème central : la société peut devenir le fournisseur de référence sans que le token capte grand-chose.</li>
+              <li>Capitalisation de ~2,06 Md$ contre ~3,6 Md$ d'actifs distribués — le marché price déjà une prime à l'option, pas un flux de trésorerie.</li>
+              <li>Le métier d'émetteur est le plus facilement commoditisable de la chaîne de valeur : Securitize, Backed, Superstate et les dépositaires traditionnels visent la même place, et les marges de tokenisation se compriment.</li>
+              <li>ONDO n'a gagné que ~13,6 % sur l'annonce, contre +26 % pour UNI le même jour : le marché ne le traite pas encore comme un bénéficiaire de premier rang.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="actor">
+        <div class="ahead">
+          <div class="aticker alt">UNI</div>
+          <div>
+            <div class="aname">Uniswap</div>
+            <div class="arole">La structure de marché que l'ordre a légalisée</div>
+          </div>
+          <div class="ameta"><span class="tag good">Fee switch actif</span><span class="tag warn">Qui opère le TSV ?</span></div>
+        </div>
+        <p class="averdict">La SEC n'a pas seulement autorisé des actions onchain : <b>elle a désigné l'AMM comme la structure de marché admissible</b> — pas le carnet d'ordres. Uniswap avait déjà livré l'infrastructure exacte que l'ordre décrit : des pools permissionnés en v4, lancés en juillet avec Superstate et Securitize, où un <em>hook</em> agit comme un module imposant des listes d'autorisation au niveau du participant. Le marché l'a compris immédiatement : UNI est passé de 6,63 $ à 8,49 $.</p>
+        <div class="facts">
+          <div class="fact"><div class="fv">+142 %</div><div class="fk">UNI sur 30 jours (mi-sept. 2026)</div></div>
+          <div class="fact"><div class="fv">~2 Md$/j</div><div class="fk">Volume moyen échangé sur le protocole</div></div>
+          <div class="fact"><div class="fv">~600 M$</div><div class="fk">Frais annualisés générés</div></div>
+          <div class="fact"><div class="fv">100 M UNI</div><div class="fk">Brûlés (~596 M$) après le vote UNIfication</div></div>
+        </div>
+        <div class="acols">
+          <div class="acol">
+            <h4>Ce qui joue pour</h4>
+            <ul>
+              <li><b>Le fee switch change tout.</b> Jusqu'à UNIfication, adopté fin 2025 par plus de 125 millions de votes contre 742, UNI était un token de gouvernance sans lien économique avec l'activité. Désormais les frais de protocole et les revenus de séquenceur d'Unichain alimentent un mécanisme de destruction.</li>
+              <li>C'est, des cinq, <b>le seul token dont la valeur capte mécaniquement le volume</b>. Si des actions américaines s'échangent dans des pools Uniswap, le lien est direct.</li>
+              <li>Les <em>hooks</em> v4 rendent la conformité paramétrable : liste blanche d'adresses, restrictions de participants, et — techniquement — suspension synchronisée avec le marché primaire.</li>
+              <li>Antériorité : les pools permissionnés tournent depuis juillet avec des émetteurs régulés. Ce n'est pas une promesse.</li>
+            </ul>
+          </div>
+          <div class="acol fix">
+            <h4>Ce qu'il faut corriger</h4>
+            <ul>
+              <li><b>Un protocole n'est pas un TSV.</b> Le TSV doit être une entité constituée aux États-Unis, disposant d'un bureau, qui filtre chaque participant. Uniswap Labs peut l'être ; le protocole, non.</li>
+              <li>La question ouverte la plus importante : <b>les frais d'un pool permissionné pour actions tokenisées remonteraient-ils au mécanisme de burn ?</b> Rien ne le garantit. Un opérateur peut déployer des pools dont les frais de protocole sont à zéro.</li>
+              <li>La synchronisation des halts avec le marché primaire suppose une source de vérité externe — un oracle de statut de cotation — qui n'est pas native au protocole.</li>
+            </ul>
+          </div>
+          <div class="acol risk">
+            <h4>Ce qui peut mal tourner</h4>
+            <ul>
+              <li><b>La capture de valeur est le point faible.</b> Le code d'Uniswap est reproductible : un TSV peut déployer un AMM équivalent en interne et ne rien reverser.</li>
+              <li>UNI a déjà pris +142 % en 30 jours. Beaucoup de la nouvelle est dans le prix, pour des volumes plafonnés à 0,25 % du VQM.</li>
+              <li>Le risque réglementaire résiduel n'a pas disparu : l'exemption couvre le lieu, pas le token de gouvernance.</li>
+              <li>Le protocole ne contrôle ni la distribution, ni le KYC, ni la relation émetteur — les trois goulots réels.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="actor">
+        <div class="ahead">
+          <div class="aticker alt">HYPE</div>
+          <div>
+            <div class="aname">Hyperliquid</div>
+            <div class="arole">Le plus grand bénéficiaire du récit, le moins couvert par le texte</div>
+          </div>
+          <div class="ameta"><span class="tag bad">Hors cadre de l'exemption</span><span class="tag good">Meilleure capture de valeur</span></div>
+        </div>
+        <p class="averdict">C'est le paradoxe central de ce dossier. HYPE a touché son plus-haut historique le 21 septembre, quatre jours après l'ordre. Or <b>ce que Hyperliquid fait sur les actions est précisément ce que l'exemption n'autorise pas.</b> Les marchés HIP-3 sont des perpétuels synthétiques — la catégorie « tokenized security-based swap » explicitement exclue — sur un protocole permissionless, sans entité américaine ni vérification d'identité au niveau du wallet. Zéro des conditions structurantes n'est remplie.</p>
+        <div class="facts">
+          <div class="fact"><div class="fv">95,73 $</div><div class="fk">HYPE — plus-haut historique le 21 sept. 2026</div></div>
+          <div class="fact"><div class="fv">~21 Md$</div><div class="fk">Capitalisation, 220 M de tokens en circulation</div></div>
+          <div class="fact"><div class="fv">4,44 Md$</div><div class="fk">Intérêt ouvert HIP-3 (actions, matières, indices, FX)</div></div>
+          <div class="fact"><div class="fv">97–99 %</div><div class="fk">Des frais du protocole affectés au rachat de HYPE</div></div>
+        </div>
+        <div class="acols">
+          <div class="acol">
+            <h4>Ce qui joue pour</h4>
+            <ul>
+              <li><b>La meilleure mécanique de capture de valeur du secteur</b> : l'Assistance Fund a déployé plus de 1,3 Md$ et détient ~28,5 M HYPE, soit un rachat de l'ordre de 7 % de la capitalisation par an. AQAv2, actif depuis le 26 août 2026, y ajoute le rendement des réserves USDC.</li>
+              <li>HIP-3 lie l'expansion au token : déployer son propre marché exige d'immobiliser 500 000 HYPE — près de 48 M$ au cours actuel.</li>
+              <li>L'adoption est réelle, pas théorique : 23 des 30 premières paires sont des actions ou des matières premières, et trade.xyz a lancé des perpétuels 24/7 sur TSLA, AAPL, NVDA, AMZN et un indice Nasdaq synthétique.</li>
+              <li>Les xStocks au comptant sont listés sur HyperCore : Hyperliquid n'est pas cantonné au synthétique.</li>
+              <li>L'exemption valide la thèse macro — les actions vont se négocier onchain, 24/7 — et Hyperliquid capte la demande hors des États-Unis, là où aucun plafond de volume ne s'applique.</li>
+            </ul>
+          </div>
+          <div class="acol fix">
+            <h4>Ce qu'il faut corriger</h4>
+            <ul>
+              <li>Presque tout, si l'objectif est le marché américain : <b>entité constituée aux États-Unis, autorisation de chaque wallet après vérification d'identité, abandon du synthétique au profit d'une créance directe.</b></li>
+              <li>L'exemption ne couvre que les <b>pools AMM permissionnés</b>. Le carnet d'ordres central de HyperCore — son avantage technique principal — n'entre pas dans le cadre.</li>
+              <li>HIP-3 est permissionless par conception. Filtrer les déployeurs de marchés contredirait la proposition de valeur du protocole.</li>
+            </ul>
+          </div>
+          <div class="acol risk">
+            <h4>Ce qui peut mal tourner</h4>
+            <ul>
+              <li><b>L'écart entre le récit et le texte est le plus large des cinq.</b> Le prix a intégré une ouverture réglementaire américaine que l'ordre ne lui accorde pas.</li>
+              <li>Effet miroir : si des actions tokenisées conformes se négocient aux États-Unis avec droits de vote et rachat, l'argument d'un perpétuel synthétique offshore s'affaiblit à la marge.</li>
+              <li>HYPE au plus-haut historique après +78 % en 30 jours : la marge de déception est maximale, et le rachat ne soutient un cours que tant que les revenus tiennent.</li>
+              <li>Un régulateur qui vient d'écrire noir sur blanc ce qui est admissible a, par la même occasion, précisé ce qui ne l'est pas.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="scoring">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 06</div><h2>Classement pondéré — réglez vos propres critères</h2></div>
+    <p class="lede read">Chaque acteur est noté de 0 à 10 sur six critères tirés de l'ordre. Les pondérations par défaut reflètent la thèse de ce dossier : la conformité prime sur la technologie. Déplacez les curseurs pour voir le classement se réorganiser selon vos propres convictions — si vous pensez que la capture de valeur par le token compte plus que l'éligibilité réglementaire, montez ce curseur et regardez Hyperliquid remonter.</p>
+    <div class="scorewrap">
+      <div class="weights">
+        <h3>Pondérations</h3>
+        <div id="weightRows"></div>
+        <div class="wnote">Score = somme (note × poids) ramenée à 100. Les notes sont des jugements argumentés en § 05, pas des mesures.</div>
+        <button class="btn" type="button" id="wReset" style="margin-top:14px;width:100%">Réinitialiser</button>
+      </div>
+      <div>
+        <div class="rank" id="rank"></div>
+        <div class="matrix">
+          <h3 style="font-family:var(--disp);font-size:17px;font-weight:600;letter-spacing:-.01em">Opportunité contre risque d'exécution</h3>
+          <div class="csub" style="font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:6px">L'axe horizontal suit votre score pondéré et bouge avec les curseurs. L'axe vertical est le risque d'exécution et de valorisation, fixe.</div>
+          <div id="matrixChart"></div>
+        </div>
+        <div class="panel pad detail-tbl">
+          <div class="eyebrow">Notes de détail et réaction observée du marché</div>
+          <div class="scroller"><table class="data" id="detailTable" style="margin-top:16px"></table></div>
+          <p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:14px;line-height:1.5">Les fenêtres de mesure diffèrent d'une ligne à l'autre et sont indiquées telles que publiées — elles ne sont pas comparables entre elles. C'est précisément le point : les mouvements les plus forts se trouvent sur les acteurs les moins couverts par le texte.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="second">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 07</div><h2>Le second cercle : ceux qui encaissent quoi qu'il arrive</h2></div>
+    <p class="lede read">Les cinq acteurs principaux se disputent la place de lieu de négociation ou d'émetteur. Sous eux, une couche d'infrastructure sera traversée par chaque transaction, quel que soit le vainqueur. C'est souvent le meilleur endroit où se placer dans un marché dont on ne sait pas encore qui le gagnera.</p>
+    <div class="circle-grid">
+      <div class="cc"><div class="cr">Règlement</div><div class="cn">Circle · USDC</div><p>L'ordre impose que les données de transaction soient libellées en dollars et publiées simultanément à tous. Un stablecoin dollar régulé est le véhicule de règlement naturel d'un pool AMM. Goldman Sachs et Citizens citent Circle parmi les premiers bénéficiaires, via l'usage de l'USDC en règlement et en collatéral.</p></div>
+      <div class="cc"><div class="cr">Oracles</div><div class="cn">Chainlink</div><p>Trois conditions de l'ordre exigent une source de vérité externe : la synchronisation des halts avec le marché primaire, la preuve que l'action sous-jacente existe bien, et le passage des actions de société. Proof of Reserve, CCIP et les intégrations dépositaires visent exactement ces trois points.</p></div>
+      <div class="cc"><div class="cr">Exécution</div><div class="cn">Solana</div><p>23 % de la capitalisation des actions tokenisées, environ 465 M$ déjà en circulation, et un coût par transaction compatible avec un AMM actif. Le premier bénéficiaire parmi les chaînes si les TSV privilégient le coût d'exécution.</p></div>
+      <div class="cc"><div class="cr">Exécution</div><div class="cn">Ethereum &amp; Base</div><p>Ethereum garde 34 % du marché — la part la plus élevée — et Base est la chaîne captive de Coinbase. Si le premier TSV américain est Coinbase, l'exécution se fera là, avec des revenus de séquenceur qui remontent à l'exploitant.</p></div>
+      <div class="cc"><div class="cr">Dépositaire</div><div class="cn">Alpaca</div><p>L'infrastructure invisible mais critique : courtier-dépositaire régulé derrière les actions tokenisées de Coinbase, et opérateur de l'Instant Tokenization Network qui rend possible la conversion <em>in-kind</em> d'Ondo. Deux des cinq acteurs en dépendent déjà.</p></div>
+      <div class="cc"><div class="cr">Émission</div><div class="cn">Backed · xStocks &amp; Securitize</div><p>Plus de 25 Md$ de volume cumulé et 80 000 détenteurs onchain pour xStocks ; Securitize détient ~7,9 % du marché avec 80,6 M$. La condition de tokenisation par un tiers non affilié fait de ces acteurs des fournisseurs obligés, aux côtés d'Ondo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="risques">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 08</div><h2>Cinq angles morts</h2></div>
+    <p class="lede read">Les arguments qui feront dérailler la thèse, s'ils doivent la faire dérailler.</p>
+    <div class="risks">
+      <div class="risk">
+        <span class="tag bad">Veto</span>
+        <h3>L'émetteur tient la clé</h3>
+        <p>Avant de lister le titre d'une société qu'il ne contrôle pas, un TSV doit lui notifier formellement son intention et attendre 30 jours. Si l'entreprise s'y oppose, le token ne peut pas être négocié. Une direction peut refuser pour des motifs de registre d'actionnaires, de marque, de conservation, de vente à découvert ou de fragmentation du marché — et rien n'oblige à motiver le refus. Toute la thèse repose sur une autorisation accordée par des sociétés qui n'y gagnent rien d'évident.</p>
+      </div>
+      <div class="risk">
+        <span class="tag warn">Prix</span>
+        <h3>Le trou d'information du week-end</h3>
+        <p>Un token peut s'échanger la nuit et le week-end pendant que le marché primaire est fermé. Il ne s'affranchit pas pour autant de l'asymétrie d'information : une nouvelle du samedi fait bouger le prix dans le pool avant la réouverture du NYSE ou du Nasdaq, avec des écarts potentiellement violents entre les deux marchés. C'est le risque que le pilote de cinq ans est précisément censé mesurer.</p>
+      </div>
+      <div class="risk">
+        <span class="tag warn">Liquidité</span>
+        <h3>Fragmentation contre découverte de prix</h3>
+        <p>Détourner du flux des bourses réglementées vers des pools AMM fragmente la liquidité et affaiblit potentiellement la découverte de prix sur le marché de référence. La SIFMA et une partie de l'industrie soutiennent qu'une exemption large aux lois fédérales sur les titres crée un arbitrage réglementaire. Si le pilote dégrade la qualité du marché, la SEC n'a aucune obligation de renouveler en 2031.</p>
+      </div>
+      <div class="risk">
+        <span class="tag bad">Juridique</span>
+        <h3>Un ordre n'est pas une loi</h3>
+        <p>Le CLARITY Act s'est enlisé au Sénat ; la SEC a agi par ordre administratif. Ce qu'une commission accorde, une autre composition peut le restreindre — et un ordre exemptif résiste moins bien à une contestation contentieuse qu'un texte législatif. Les commentaires restent ouverts sous le dossier 4-927, sans date limite annoncée : le cadre peut encore bouger.</p>
+      </div>
+      <div class="risk">
+        <span class="tag warn">Échelle</span>
+        <h3>Des plafonds qui interdisent le revenu</h3>
+        <p>75 symboles et 0,25 % du volume quotidien moyen par titre : sur une valeur qui traite 180 millions d'actions par jour, le TSV plafonne à 450 000 actions. Le deuxième dépassement suspend le titre trois mois. Aucune ligne de revenus significative ne peut naître de ce périmètre avant un élargissement — et l'élargissement n'est pas promis.</p>
+      </div>
+      <div class="risk">
+        <span class="tag acc">Contre-argument</span>
+        <h3>Ce que le marché sous-estime peut-être</h3>
+        <p>À l'inverse : la valeur ici n'est pas le revenu à cinq ans, c'est l'antériorité. Les acteurs qui auront tourné en conformité pendant le pilote écriront de fait le rulemaking permanent, par leurs données et par leurs commentaires. Dans les marchés régulés, l'avantage du premier entrant se mesure rarement en parts de marché immédiates — il se mesure en influence sur la règle suivante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="chrono">
+  <div class="wrap">
+    <div class="sechead"><div class="secnum">§ 09</div><h2>Comment on en est arrivé là</h2></div>
+    <div class="tl">
+      <div class="tli"><div class="d">Juillet 2025</div><div class="t">Kraken et Backed lancent xStocks : les premières actions américaines tokenisées à grande échelle, hors des États-Unis.</div></div>
+      <div class="tli"><div class="d">Octobre 2025</div><div class="t">HIP-3 entre en production sur Hyperliquid : n'importe qui peut déployer un marché de perpétuels en immobilisant 500 000 HYPE.</div></div>
+      <div class="tli"><div class="d">Décembre 2025</div><div class="t">La gouvernance Uniswap adopte UNIfication : activation des frais de protocole et destruction de 100 millions d'UNI.</div></div>
+      <div class="tli"><div class="d">1er juillet 2026</div><div class="t">Mainnet de Robinhood Chain ; les stock tokens sont déployés dans plus de 120 pays.</div></div>
+      <div class="tli"><div class="d">Juillet 2026</div><div class="t">Uniswap lance les pools permissionnés en v4 avec Superstate et Securitize — l'architecture que l'ordre décrira deux mois plus tard.</div></div>
+      <div class="tli"><div class="d">24 août 2026</div><div class="t">Coinbase met en ligne 13 actions tokenisées sur Base, adossées à des titres réels conservés par Alpaca.</div></div>
+      <div class="tli"><div class="d">26 août 2026</div><div class="t">Hyperliquid active AQAv2 : le rendement des réserves USDC alimente les rachats de HYPE.</div></div>
+      <div class="tli"><div class="d">Mi-septembre 2026</div><div class="t">Le CLARITY Act s'enlise au Sénat. La voie législative se referme.</div></div>
+      <div class="tli key"><div class="d">17 septembre 2026</div><div class="t">La SEC publie l'ordre 34-106402 — l'Innovation Exemption. Cinq ans, neuf conditions, deux niveaux de plafond.</div></div>
+      <div class="tli"><div class="d">21 septembre 2026</div><div class="t">Ondo lance la conversion <em>in-kind</em> avec Alpaca. HYPE inscrit un plus-haut historique à 95,97 $.</div></div>
+      <div class="tli key"><div class="d">17 septembre 2031</div><div class="t">Expiration de l'exemption. Sans règle permanente d'ici là, le dispositif s'éteint.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="eyebrow">Sources principales</div>
+    <div class="srcgrid">
+      <a href="https://www.sec.gov/newsroom/press-releases/2026-90-sec-issues-innovation-exemption-facilitate-trading-tokenized-nms-stock-request-comment" target="_blank" rel="noopener">SEC — Communiqué 2026-90, Innovation Exemption</a>
+      <a href="https://www.sec.gov/files/rules/exorders/2026/34-106402.pdf" target="_blank" rel="noopener">SEC — Ordre 34-106402 (texte intégral, PDF)</a>
+      <a href="https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726" target="_blank" rel="noopener">Déclaration du président Paul Atkins</a>
+      <a href="https://www.forbes.com/sites/boazsobrado/2026/09/17/the-sec-just-gave-tokenized-stocks-five-years-to-prove-themselves/" target="_blank" rel="noopener">Forbes — Five years to prove themselves</a>
+      <a href="https://www.coindesk.com/business/2026/09/20/coinbase-robinhood-circle-could-be-early-winners-of-sec-s-tokenized-stock-push-analysts-say" target="_blank" rel="noopener">CoinDesk — Goldman Sachs et Citizens sur COIN, HOOD, CRCL</a>
+      <a href="https://www.cnbc.com/2026/09/17/sec-clears-path-for-tokenized-stocks-bringing-24/7-trading-closer.html" target="_blank" rel="noopener">CNBC — La voie vers le 24/7</a>
+      <a href="https://www.sullcrom.com/insights/memo/2026/September/SEC-Issues-Innovation-Exemption-for-Tokenized-Securities" target="_blank" rel="noopener">Sullivan &amp; Cromwell — Analyse juridique de l'ordre</a>
+      <a href="https://natlawreview.com/article/sec-issues-innovation-exemption-chain-trading-tokenized-nms-stocks" target="_blank" rel="noopener">National Law Review — Conditions et niveaux</a>
+      <a href="https://cointelegraph.com/news/tokenized-stocks-rise-23b-all-time-high" target="_blank" rel="noopener">Cointelegraph — Capitalisation et parts par chaîne</a>
+      <a href="https://blog.kraken.com/product/xstocks/25-billion-in-total-transaction-volume" target="_blank" rel="noopener">Kraken — xStocks, 25 Md$ de volume cumulé</a>
+      <a href="https://www.coindesk.com/business/2026/08/24/coinbase-debuts-tokenized-stocks-on-base-network-joining-race-to-bring-equities-on-blockchain" target="_blank" rel="noopener">CoinDesk — Coinbase lance les actions tokenisées sur Base</a>
+      <a href="https://www.prnewswire.com/news-releases/ondo-finance-launches-in-kind-conversion-letting-institutions-convert-underlying-shares-directly-into-tokenized-stocks-302884764.html" target="_blank" rel="noopener">Ondo Finance — Conversion <em>in-kind</em> (21 sept. 2026)</a>
+      <a href="https://blog.uniswap.org/unification" target="_blank" rel="noopener">Uniswap — UNIfication</a>
+      <a href="https://www.coingecko.com/learn/hyperliquid-hip3-hip4-tokenized-stocks-and-prediction-markets" target="_blank" rel="noopener">CoinGecko — HIP-3, actions tokenisées et marchés de prédiction</a>
+      <a href="https://www.benzinga.com/crypto/26/09/61884662/hyperliquid-uniswap-tokens-surge-as-sec-amends-tokenized-stock-trading-rules" target="_blank" rel="noopener">Benzinga — Envolée de HYPE et UNI</a>
+      <a href="https://cryptobriefing.com/robinhood-tokenized-stock-trading-us-2027/" target="_blank" rel="noopener">Crypto Briefing — Robinhood vise 2027 aux États-Unis</a>
+    </div>
+    <div class="disclaimer">
+      <b>Avertissement.</b> Ce dossier est un travail d'analyse et de vulgarisation, à jour au 22 septembre 2026. Il ne constitue ni un conseil en investissement, ni un conseil juridique, ni une recommandation d'achat ou de vente. Les notes attribuées aux acteurs sont des jugements éditoriaux argumentés, pas des mesures. Les chiffres proviennent de sources publiques citées ci-dessus, avec leurs dates de relevé ; les cours et encours évoluent en permanence. Le simulateur de conformité est un outil pédagogique qui simplifie un ordre administratif de plusieurs dizaines de pages — reportez-vous au texte 34-106402 et à un conseil qualifié pour toute décision réelle.
+    </div>
+    <p class="mono" style="font-size:11px;color:var(--ink-3);margin-top:24px">Dossier 34-106402 · Analyse indépendante · Données relevées le 22 septembre 2026</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var $ = function(s,r){return (r||document).querySelector(s);};
+var el = function(t,c,h){var n=document.createElement(t); if(c) n.className=c; if(h!=null) n.innerHTML=h; return n;};
+var fmt = function(n,d){return n.toLocaleString("fr-FR",{minimumFractionDigits:d||0,maximumFractionDigits:d||0});};
+
+/* ---------------- theme ---------------- */
+var tb = $("#themebtn");
+try{ var saved = localStorage.getItem("sectoken-theme"); if(saved) document.documentElement.setAttribute("data-theme", saved); }catch(e){}
+tb.addEventListener("click", function(){
+  var cur = document.documentElement.getAttribute("data-theme");
+  var isDark = cur ? cur === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var next = isDark ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  try{ localStorage.setItem("sectoken-theme", next); }catch(e){}
+  drawGrowth(); drawMatrix();
+});
+
+/* ---------------- scroll progress + spy ---------------- */
+var bar = $("#progress");
+var links = Array.prototype.slice.call(document.querySelectorAll(".navlinks a"));
+var secs = links.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+function onScroll(){
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = (h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0) + "%";
+  var y = window.scrollY + 120, cur = -1;
+  for (var i=0;i<secs.length;i++){ if(secs[i].offsetTop <= y) cur = i; }
+  links.forEach(function(a,i){ if(i===cur) a.setAttribute("aria-current","true"); else a.removeAttribute("aria-current"); });
+}
+window.addEventListener("scroll", onScroll, {passive:true});
+window.addEventListener("resize", onScroll);
+
+/* ---------------- § 01 conditions ---------------- */
+var CONDITIONS = [
+ {n:"01", t:"Entité américaine", s:"Le lieu de négociation doit être constitué aux États-Unis et y maintenir un bureau.",
+  m:"C'est la condition la plus brutale, et la première à éliminer. Aucune entité offshore n'est éligible, quelles que soient ses licences ailleurs. Elle écarte d'emblée les protocoles sans personne morale identifiable, et oblige Coinbase à répliquer en domestique une structure aujourd'hui supervisée à Abu Dhabi.", tags:[["bad","Écarte Hyperliquid"],["good","Favorise COIN, HOOD"]]},
+ {n:"02", t:"Aucun accès anonyme", s:"Chaque participant — trader comme apporteur de liquidité — est vérifié avant d'accéder au pool.",
+  m:"L'autorisation se fait au niveau de l'adresse : seuls les wallets inscrits sur liste blanche, après contrôles LCB-FT, peuvent négocier. Le trading anonyme est explicitement interdit. C'est le point de friction maximal avec la culture DeFi — et un métier que les courtiers exercent déjà.", tags:[["bad","Écarte le permissionless"],["good","Favorise les courtiers"]]},
+ {n:"03", t:"Une action réelle, jamais un dérivé", s:"L'ordre exclut les « tokenized linked securities » et les « tokenized security-based swaps ».",
+  m:"Le token doit représenter l'action elle-même, pas son prix. Cette seule ligne disqualifie la structure des stock tokens européens de Robinhood, les perpétuels synthétiques de HIP-3, et tout produit d'exposition. Elle exclut aussi les titres OTC Markets et les sociétés non cotées — donc les tokens SpaceX et OpenAI.", tags:[["bad","Écarte les synthétiques"],["bad","Écarte l'OTC"]]},
+ {n:"04", t:"Tokenisation par un tiers", s:"Le TSV doit notifier par écrit à la SEC qu'un tiers non affilié a tokenisé l'action.",
+  m:"Conséquence structurelle sous-estimée : le régulateur sépare l'émission de la négociation. Un lieu de négociation ne peut pas tokeniser lui-même les titres qu'il liste. Cela crée mécaniquement un marché pour des émetteurs indépendants — Ondo, Backed, Securitize, Superstate.", tags:[["acc","Crée un rôle pour ONDO"]]},
+ {n:"05", t:"Droits d'actionnaire complets", s:"Le token confère les droits économiques et de gouvernance de l'action : dividendes et vote.",
+  m:"« Les mêmes droits et privilèges que l'action NMS traditionnelle. » Les dividendes sont la partie facile ; la transmission effective du droit de vote au détenteur d'un token est un problème d'infrastructure non résolu à grande échelle. C'est le test que la plupart des produits existants échouent aujourd'hui.", tags:[["warn","Chantier pour tous"]]},
+ {n:"06", t:"Contrats publics et auditables", s:"Les smart contracts doivent être publics, auditables, et déployés sur une blockchain publique sans permission.",
+  m:"La SEC impose la transparence du code et interdit les chaînes privées ou permissionnées. C'est l'une des rares conditions qui favorise franchement les acteurs crypto natifs contre les infrastructures financières traditionnelles, qui auraient spontanément déployé sur un registre fermé.", tags:[["good","Favorise le crypto natif"]]},
+ {n:"07", t:"Droit d'objection de l'émetteur", s:"Notification formelle à la société, puis 30 jours. Une objection interdit la cotation du token.",
+  m:"C'est le verrou le plus politique du dispositif. Une société peut s'opposer pour des motifs de registre d'actionnaires, de marque, de conservation, de vente à découvert ou de fragmentation du marché. Toute la thèse d'investissement dépend d'autorisations accordées par des émetteurs qui n'y gagnent rien d'évident.", tags:[["bad","Verrou externe"]]},
+ {n:"08", t:"Halts synchronisés", s:"Si l'action est suspendue sur son marché primaire, la négociation du token s'arrête aussi.",
+  m:"Exigence d'ingénierie autant que de conformité : elle suppose une source de vérité externe fiable sur le statut de cotation, branchée en temps réel sur le contrat. C'est précisément le type de service qu'un réseau d'oracles vend.", tags:[["acc","Favorise les oracles"]]},
+ {n:"09", t:"Transparence des transactions", s:"Données de transaction libellées en dollars, publiées à tous les participants en même temps et aux mêmes conditions.",
+  m:"Objectif affiché : réduire les asymétries d'information. Effet pratique : le règlement en dollars pousse vers un stablecoin dollar régulé, et interdit les flux d'information privilégiés vers certains teneurs de marché.", tags:[["acc","Favorise l'USDC"]]}
+];
+var cg = $("#condgrid");
+CONDITIONS.forEach(function(c, i){
+  var b = el("button","cond");
+  b.type = "button"; b.setAttribute("aria-expanded","false");
+  var inner = el("div","cond-in");
+  inner.appendChild(el("div","ix","§ " + c.n));
+  inner.appendChild(el("h3",null,c.t));
+  inner.appendChild(el("div","sum",c.s));
+  var more = el("div","more",c.m); more.hidden = true;
+  var who = el("div","who"); who.hidden = true;
+  c.tags.forEach(function(t){ who.appendChild(el("span","tag "+t[0],t[1])); });
+  inner.appendChild(more); inner.appendChild(who);
+  b.appendChild(inner); cg.appendChild(b);
+  b.addEventListener("click", function(){
+    var open = b.getAttribute("aria-expanded") === "true";
+    b.setAttribute("aria-expanded", open ? "false" : "true");
+    more.hidden = open; who.hidden = open;
+  });
+});
+
+/* ---------------- § 02 volume cap calculator ---------------- */
+var advIn=$("#advIn"), pxIn=$("#pxIn"), tierIn=$("#tierIn");
+function calc(){
+  var adv = Math.max(0, parseFloat(advIn.value)||0);
+  var px  = Math.max(0, parseFloat(pxIn.value)||0);
+  var r   = parseFloat(tierIn.value);
+  var shares = adv * r;
+  var notional = shares * px;
+  $("#capShares").textContent = fmt(Math.round(shares)) + " actions / jour";
+  $("#capNotional").textContent = "soit " + (notional >= 1e6 ? fmt(notional/1e6,1) + " M$" : fmt(Math.round(notional)) + " $") + " de volume notionnel quotidien maximum sur ce titre.";
+  $("#capNote").textContent = r === 0.0025
+    ? "Tier 1 : 75 symboles maximum par lieu. Deuxième dépassement = suspension de trois mois sur le titre, pour ce TSV et tous ses affiliés."
+    : "Tier 2 : 250 symboles maximum par lieu. Plafond dix fois plus généreux, sur des titres dix fois moins liquides.";
+}
+[advIn,pxIn,tierIn].forEach(function(n){ n.addEventListener("input", calc); n.addEventListener("change", calc); });
+Array.prototype.forEach.call(document.querySelectorAll(".preset button"), function(b){
+  b.addEventListener("click", function(){
+    advIn.value = b.dataset.adv; pxIn.value = b.dataset.px;
+    tierIn.value = b.textContent.indexOf("Tier 2") > -1 ? "0.025" : "0.0025";
+    calc();
+  });
+});
+calc();
+
+/* ---------------- § 03 charts ---------------- */
+function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+var GROWTH = [
+  {x:"Janv. 2026", v:0.9,  lab:"< 1 Md$"},
+  {x:"Été 2026",   v:2.3,  lab:"2,3 Md$"},
+  {x:"Sept. 2026", v:3.1,  lab:"3,1 Md$"}
+];
+function drawGrowth(){
+  var host = $("#chartGrowth"); if(!host) return;
+  var W=460,H=210, pl=46,pr=22,pt=26,pb=34;
+  var iw=W-pl-pr, ih=H-pt-pb, max=4;
+  var ink=css("--ink"), ink2=css("--ink-2"), ink3=css("--ink-3"), acc=css("--accent"), grid=css("--grid"), surf=css("--surface");
+  var X=function(i){ return pl + (iw * i / (GROWTH.length-1)); };
+  var Y=function(v){ return pt + ih - (ih * v / max); };
+  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Capitalisation des actions tokenisées : moins de 1 milliard en janvier 2026, 2,3 milliards à l\'été, 3,1 milliards en septembre 2026.">';
+  for(var g=0; g<=4; g++){
+    var gy=Y(g);
+    s+='<line x1="'+pl+'" y1="'+gy+'" x2="'+(W-pr)+'" y2="'+gy+'" stroke="'+grid+'" stroke-width="1"/>';
+    s+='<text x="'+(pl-10)+'" y="'+(gy+4)+'" text-anchor="end" font-family="'+"'IBM Plex Mono',monospace"+'" font-size="10" fill="'+ink3+'">'+g+' Md$</text>';
+  }
+  var line="", area="";
+  GROWTH.forEach(function(p,i){ var cx=X(i),cy=Y(p.v); line += (i?" L":"M")+cx+" "+cy; });
+  area = line + " L"+X(GROWTH.length-1)+" "+Y(0)+" L"+X(0)+" "+Y(0)+" Z";
+  s+='<path d="'+area+'" fill="'+acc+'" fill-opacity="0.12"/>';
+  s+='<path d="'+line+'" fill="none" stroke="'+acc+'" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 4"/>';
+  GROWTH.forEach(function(p,i){
+    var cx=X(i),cy=Y(p.v);
+    s+='<circle cx="'+cx+'" cy="'+cy+'" r="5.5" fill="'+acc+'" stroke="'+surf+'" stroke-width="2"/>';
+    s+='<text x="'+cx+'" y="'+(cy-13)+'" text-anchor="middle" font-family="'+"'IBM Plex Mono',monospace"+'" font-size="11.5" font-weight="600" fill="'+ink+'">'+p.lab+'</text>';
+    s+='<text x="'+cx+'" y="'+(H-12)+'" text-anchor="middle" font-family="'+"'IBM Plex Mono',monospace"+'" font-size="10" fill="'+ink2+'">'+p.x+'</text>';
+  });
+  s+='</svg>';
+  host.innerHTML = s;
+}
+
+function bars(hostSel, rows, unit, altIndex){
+  var host=$(hostSel); if(!host) return;
+  host.innerHTML="";
+  var max = Math.max.apply(null, rows.map(function(r){return r.v;}));
+  rows.forEach(function(r,i){
+    var row = el("div","barrow");
+    row.appendChild(el("div","bl",r.k));
+    var tr = el("div","bartrack");
+    var fill = el("div","barfill" + (i===altIndex ? " alt" : ""));
+    fill.style.width = Math.max(2,(r.v/max)*100) + "%";
+    tr.appendChild(fill); row.appendChild(tr);
+    row.appendChild(el("div","barval", r.d || (fmt(r.v, r.dec||0) + unit)));
+    host.appendChild(row);
+  });
+}
+bars("#chainBars", [
+  {k:"Ethereum", v:34}, {k:"Solana", v:23}, {k:"Autres chaînes", v:43}
+], " %", 0);
+bars("#issuerBars", [
+  {k:"Ondo Finance", v:955}, {k:"Kraken · xStocks", v:507}, {k:"Binance · bStocks", v:334}, {k:"Securitize", v:80.6, dec:1}
+], " M$", 0);
+bars("#rwaBars", [
+  {k:"Bons du Trésor", v:15000, d:"15 Md$ · 44 %"},
+  {k:"Matières premières", v:4500, d:"4,5 Md$ · 13 %"},
+  {k:"Actions", v:1900, d:"~1,9 Md$ · 5,5 %"},
+  {k:"Autres RWA", v:12600, d:"~12,6 Md$ · 37 %"}
+], "", 2);
+drawGrowth();
+
+/* ---------------- § 04 simulator ---------------- */
+var QUESTIONS = [
+ {q:"Que représente exactement votre token ?",
+  why:"L'ordre exclut nommément les « tokenized linked securities » et les « tokenized security-based swaps ». C'est la première cause d'élimination.",
+  o:[["A","Une créance directe sur l'action réelle, détenue par un dépositaire","ok"],
+     ["B","Une exposition au prix via un swap ou un dérivé","no"],
+     ["C","Un panier ou un indice synthétique","no"]]},
+ {q:"Quels droits le détenteur du token reçoit-il ?",
+  why:"Le token doit conférer « les mêmes droits et privilèges » que l'action : dividendes et droits de vote.",
+  o:[["A","Dividendes et droits de vote effectifs","ok"],
+     ["B","Dividendes uniquement","mid"],
+     ["C","Aucun droit d'actionnaire","no"]]},
+ {q:"Quel est le titre sous-jacent ?",
+  why:"L'exemption ne couvre que les actions NMS — environ 8 000 titres. Ni OTC Markets, ni sociétés non cotées.",
+  o:[["A","Une action NMS cotée au NYSE ou au Nasdaq","ok"],
+     ["B","Un titre négocié sur OTC Markets","no"],
+     ["C","Une société non cotée (type SpaceX, OpenAI)","no"]]},
+ {q:"Où est constituée l'entité qui exploite le lieu de négociation ?",
+  why:"Un TSV doit être constitué aux États-Unis et y maintenir un bureau. Les entités offshore sont inéligibles.",
+  o:[["A","Aux États-Unis, avec un bureau américain","ok"],
+     ["B","À l'étranger, ou sans personne morale identifiable","no"]]},
+ {q:"Comment les participants accèdent-ils au marché ?",
+  why:"Chaque adresse — traders et apporteurs de liquidité — doit être autorisée après contrôles d'identité et LCB-FT. Le trading anonyme est interdit.",
+  o:[["A","Chaque wallet est sur liste blanche après vérification d'identité","ok"],
+     ["B","KYC au niveau du compte, mais les wallets restent libres","mid"],
+     ["C","Accès permissionless, n'importe quelle adresse","no"]]},
+ {q:"Quelle est la mécanique d'appariement ?",
+  why:"L'exemption vise les pools AMM permissionnés. Un carnet d'ordres central, lui, reste une activité de bourse — donc hors périmètre.",
+  o:[["A","Un pool de liquidité AMM permissionné","ok"],
+     ["B","Un carnet d'ordres central (CLOB)","no"],
+     ["C","Du gré à gré bilatéral","no"]]},
+ {q:"Où tournent vos smart contracts ?",
+  why:"Ils doivent être publics, auditables et déployés sur une blockchain publique sans permission.",
+  o:[["A","Publics et auditables, sur une chaîne publique sans permission","ok"],
+     ["B","Sur un registre privé ou permissionné","no"],
+     ["C","Code fermé ou partiellement fermé","no"]]},
+ {q:"Où en êtes-vous avec l'émetteur du titre ?",
+  why:"Notification écrite, puis 30 jours de délai. Une objection de la société interdit purement et simplement la cotation du token.",
+  o:[["A","Notifié, 30 jours écoulés, aucune objection","ok"],
+     ["B","Pas encore notifié","mid"],
+     ["C","L'émetteur a formellement objecté","no"]]}
+];
+var PRESETS = [
+ {n:"Stock tokens Robinhood (Europe)", a:[1,2,0,0,1,0,0,1]},
+ {n:"Perpétuels HIP-3 (Hyperliquid)",  a:[1,2,0,1,2,1,0,1]},
+ {n:"Actions tokenisées Coinbase sur Base", a:[0,1,0,1,0,0,0,1]}
+];
+var answers = [], step = 0;
+var simBody=$("#simBody"), simStep=$("#simStep"), simDots=$("#simDots");
+
+function renderDots(){
+  simDots.innerHTML="";
+  for(var i=0;i<QUESTIONS.length;i++){
+    var d=document.createElement("i");
+    if(i<answers.length) d.className="done";
+    if(i===step && step<QUESTIONS.length) d.className="on";
+    simDots.appendChild(d);
+  }
+}
+function renderSim(){
+  renderDots();
+  simBody.innerHTML="";
+  if(step < QUESTIONS.length){
+    simStep.textContent = "Question " + (step+1) + " / " + QUESTIONS.length;
+    var Q = QUESTIONS[step];
+    simBody.appendChild(el("div","simq",Q.q));
+    simBody.appendChild(el("div","simwhy",Q.why));
+    var opts = el("div","simopts");
+    Q.o.forEach(function(o,i){
+      var b=el("button","simopt"); b.type="button";
+      b.appendChild(el("span","k",o[0]));
+      b.appendChild(el("span",null,o[1]));
+      b.addEventListener("click", function(){ answers[step]=i; step++; renderSim(); });
+      opts.appendChild(b);
+    });
+    simBody.appendChild(opts);
+    if(step===0){
+      var pw = el("div",null,'<div class="eyebrow" style="margin-top:26px">Ou testez un produit existant</div>');
+      var pr = el("div","preset");
+      PRESETS.forEach(function(p){
+        var b=document.createElement("button"); b.type="button"; b.textContent=p.n;
+        b.addEventListener("click", function(){ answers=p.a.slice(); step=QUESTIONS.length; renderSim(); });
+        pr.appendChild(b);
+      });
+      pw.appendChild(pr); simBody.appendChild(pw);
+    }
+  } else {
+    simStep.textContent = "Verdict";
+    var fails=0, mids=0;
+    var list = el("div","vlist");
+    QUESTIONS.forEach(function(Q,i){
+      var st = Q.o[answers[i]][2];
+      if(st==="no") fails++; if(st==="mid") mids++;
+      var it = el("div","vitem");
+      it.appendChild(el("span","m "+(st==="ok"?"ok":st==="mid"?"mid":"no"), st==="ok"?"OK":st==="mid"?"~":"✕"));
+      it.appendChild(el("span",null,"<b>"+Q.q.replace(/\s*\?$/,"")+"</b> — "+Q.o[answers[i]][1]));
+      list.appendChild(it);
+    });
+    var cls = fails ? "no" : (mids ? "mid" : "ok");
+    var title = fails ? "Hors cadre" : (mids ? "Éligible sous conditions" : "Éligible");
+    var msg = fails
+      ? "L'exemption est cumulative : " + fails + " réponse" + (fails>1?"s":"") + " bloquante" + (fails>1?"s":"") + " suffi" + (fails>1?"sent":"t") + " à sortir le produit du cadre. Aucune pondération, aucune tolérance — il faut corriger chaque point marqué d'une croix avant de pouvoir se prévaloir de l'ordre 34-106402."
+      : (mids
+        ? "Aucun point bloquant, mais " + mids + " élément" + (mids>1?"s":"") + " à finaliser avant d'exploiter le TSV. Ce sont des chantiers d'exécution, pas des obstacles structurels."
+        : "Sur les huit conditions testées ici, le produit tient. Restent les exigences que ce simulateur ne couvre pas : tokenisation par un tiers non affilié, halts synchronisés avec le marché primaire, publication simultanée des données en dollars — et les plafonds de volume.");
+    var v = el("div","verdict");
+    var head = el("div","vhead");
+    head.appendChild(el("div","vbadge "+cls, title));
+    head.appendChild(el("div","tag "+(fails?"bad":mids?"warn":"good"), fails ? fails+" point(s) bloquant(s)" : mids ? mids+" point(s) à finaliser" : "8 / 8"));
+    v.appendChild(head);
+    v.appendChild(el("p",null,msg));
+    v.appendChild(list);
+    v.appendChild(el("p","mono","<span style='font-size:12px;color:var(--ink-3)'>Rappel : même éligible, un TSV reste plafonné à 75 symboles Tier 1 et 0,25 % du volume quotidien moyen par titre.</span>"));
+    simBody.appendChild(v);
+  }
+}
+$("#simBack").addEventListener("click", function(){ if(step>0){ step--; answers.length=step; renderSim(); } });
+$("#simReset").addEventListener("click", function(){ answers=[]; step=0; renderSim(); });
+renderSim();
+
+/* ---------------- § 06 scoring ---------------- */
+var CRIT = [
+ {id:"elig",  n:"Éligibilité TSV",     w:5, d:"Peut-il exploiter ou servir un lieu conforme ?"},
+ {id:"conf",  n:"Conformité actuelle", w:4, d:"Ce qu'il opère aujourd'hui entre-t-il déjà dans le cadre ?"},
+ {id:"dist",  n:"Distribution US",     w:4, d:"Accès direct aux investisseurs américains."},
+ {id:"infra", n:"Infrastructure",      w:3, d:"Chaîne, conservation, règlement, liquidité."},
+ {id:"capt",  n:"Capture de valeur",   w:4, d:"Le volume se traduit-il en valeur pour le titre ou le token ?"},
+ {id:"speed", n:"Vitesse d'impact",    w:2, d:"Délai avant un effet réel sur les comptes."}
+];
+var ACTORS = [
+ {k:"COIN", n:"Coinbase",    sub:"NASDAQ : COIN", s:{elig:9,conf:7,dist:8,infra:9,capt:6,speed:7}, risk:35, react:"194 $ au 21 sept. — pas de re-rating"},
+ {k:"HOOD", n:"Robinhood",   sub:"NASDAQ : HOOD", s:{elig:8,conf:3,dist:9,infra:7,capt:7,speed:6}, risk:50, react:"119,82 $ au 21 sept. — pas de re-rating"},
+ {k:"ONDO", n:"Ondo Finance",sub:"Token ONDO",    s:{elig:7,conf:7,dist:4,infra:7,capt:4,speed:6}, risk:55, react:"+13,6 % dans les 24 h suivant l'ordre"},
+ {k:"UNI",  n:"Uniswap",     sub:"Token UNI",     s:{elig:5,conf:6,dist:3,infra:8,capt:7,speed:5}, risk:60, react:"+26 % le jour de l'ordre · +142 % sur 30 j"},
+ {k:"HYPE", n:"Hyperliquid", sub:"Token HYPE",    s:{elig:2,conf:2,dist:4,infra:9,capt:9,speed:3}, risk:82, react:"+78 % sur 30 j · plus-haut historique le 21 sept."}
+];
+var weights = {};
+CRIT.forEach(function(c){ weights[c.id]=c.w; });
+
+var wRows = $("#weightRows");
+CRIT.forEach(function(c){
+  var row = el("div","wrow");
+  var lab = el("div","wl");
+  lab.appendChild(el("span",null,c.n));
+  var b = el("b",null,String(c.w)); lab.appendChild(b);
+  row.appendChild(lab);
+  var r = document.createElement("input");
+  r.type="range"; r.min="0"; r.max="5"; r.step="1"; r.value=String(c.w); r.id="w-"+c.id;
+  r.setAttribute("aria-label","Poids : "+c.n);
+  r.addEventListener("input", function(){ weights[c.id]=parseInt(r.value,10); b.textContent=r.value; render(); });
+  row.appendChild(r);
+  row.appendChild(el("div","mono","<span style='font-size:10.5px;color:var(--ink-3);line-height:1.4;display:block;margin-top:4px'>"+c.d+"</span>"));
+  wRows.appendChild(row);
+});
+$("#wReset").addEventListener("click", function(){
+  CRIT.forEach(function(c){ weights[c.id]=c.w; var r=$("#w-"+c.id); r.value=String(c.w); r.previousSibling.querySelector("b").textContent=String(c.w); });
+  render();
+});
+
+function score(a){
+  var tot=0, wsum=0;
+  CRIT.forEach(function(c){ tot += a.s[c.id]*weights[c.id]; wsum += weights[c.id]; });
+  return wsum ? (tot/(wsum*10))*100 : 0;
+}
+function drawMatrix(){
+  var host=$("#matrixChart"); if(!host) return;
+  var W=560,H=340, pl=54,pr=26,pt=22,pb=46;
+  var iw=W-pl-pr, ih=H-pt-pb;
+  var ink=css("--ink"), ink2=css("--ink-2"), ink3=css("--ink-3"), acc=css("--accent"), grid=css("--grid"), surf=css("--surface"), amb=css("--amber");
+  var pts = ACTORS.map(function(a){ return {n:a.n, x:score(a), y:a.risk}; }).sort(function(p,q){ return q.x-p.x; });
+  var xs = pts.map(function(p){return p.x;});
+  var lo = Math.min.apply(null,xs), hi = Math.max.apply(null,xs);
+  var pad = Math.max(6, (hi-lo)*0.32);
+  var d0 = Math.max(0, Math.floor((lo-pad)/5)*5), d1 = Math.min(100, Math.ceil((hi+pad)/5)*5);
+  if(d1-d0 < 20){ d0 = Math.max(0, d1-20); if(d1-d0 < 20) d1 = Math.min(100, d0+20); }
+  var y0=20, y1=90;
+  var X=function(v){ return pl + iw*((v-d0)/(d1-d0)); };
+  var Y=function(v){ return pt + ih - ih*((v-y0)/(y1-y0)); };
+  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Matrice opportunité contre risque d\'exécution pour les cinq acteurs.">';
+  for(var ti=0; ti<=4; ti++){
+    var gx = d0 + (d1-d0)*ti/4, gy = y0 + (y1-y0)*ti/4;
+    s+='<line x1="'+X(gx)+'" y1="'+pt+'" x2="'+X(gx)+'" y2="'+(pt+ih)+'" stroke="'+grid+'" stroke-width="1"/>';
+    s+='<line x1="'+pl+'" y1="'+Y(gy)+'" x2="'+(W-pr)+'" y2="'+Y(gy)+'" stroke="'+grid+'" stroke-width="1"/>';
+    s+='<text x="'+X(gx)+'" y="'+(pt+ih+18)+'" text-anchor="middle" font-family="'+"'IBM Plex Mono',monospace"+'" font-size="10" fill="'+ink3+'">'+Math.round(gx)+'</text>';
+    s+='<text x="'+(pl-10)+'" y="'+(Y(gy)+4)+'" text-anchor="end" font-family="'+"'IBM Plex Mono',monospace"+'" font-size="10" fill="'+ink3+'">'+Math.round(gy)+'</text>';
+  }
+  s+='<text x="'+(pl+iw/2)+'" y="'+(H-8)+'" text-anchor="middle" font-family="'+"'IBM Plex Mono',monospace"+'" font-size="10.5" fill="'+ink2+'">Score d\'opportunité pondéré →</text>';
+  s+='<text x="14" y="'+(pt+ih/2)+'" text-anchor="middle" transform="rotate(-90 14 '+(pt+ih/2)+')" font-family="'+"'IBM Plex Mono',monospace"+'" font-size="10.5" fill="'+ink2+'">Risque d\'exécution →</text>';
+  var placed = [];
+  pts.forEach(function(p,i){
+    var cx=X(p.x), cy=Y(p.y), lead = i===0;
+    var c = lead ? amb : acc;
+    s+='<circle cx="'+cx+'" cy="'+cy+'" r="8" fill="'+c+'" stroke="'+surf+'" stroke-width="2"/>';
+    var anchor = cx > pl+iw-96 ? "end" : "start";
+    var dx = anchor === "end" ? -14 : 14;
+    var ly = cy + 4, guard = 0;
+    while(guard++ < 8 && placed.some(function(q){ return Math.abs(q.y-ly) < 15 && Math.abs(q.x-cx) < 130; })) ly += 15;
+    placed.push({x:cx, y:ly});
+    if(ly !== cy+4) s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+(cx+dx*0.55)+'" y2="'+(ly-4)+'" stroke="'+c+'" stroke-width="1" stroke-opacity="0.55"/>';
+    s+='<text x="'+(cx+dx)+'" y="'+ly+'" text-anchor="'+anchor+'" font-family="'+"'IBM Plex Mono',monospace"+'" font-size="11.5" font-weight="600" fill="'+ink+'">'+p.n+'</text>';
+  });
+  s+='</svg>';
+  host.innerHTML = s;
+}
+function render(){
+  var ranked = ACTORS.map(function(a){ return {a:a, v:score(a)}; }).sort(function(p,q){ return q.v-p.v; });
+  var max = ranked[0].v || 1;
+  var host = $("#rank"); host.innerHTML="";
+  ranked.forEach(function(r,i){
+    var row = el("div","rrow");
+    row.appendChild(el("div","rk mono", String(i+1).padStart(2,"0")));
+    row.appendChild(el("div","rn", r.a.n + "<small>" + r.a.sub + "</small>"));
+    var tr = el("div","rtrack");
+    var f = el("div","rfill");
+    f.style.width = Math.max(3,(r.v/max)*100)+"%";
+    if(i===0) f.style.background = "var(--amber)";
+    tr.appendChild(f); row.appendChild(tr);
+    row.appendChild(el("div","rs mono", r.v.toFixed(0)));
+    host.appendChild(row);
+  });
+  var t = $("#detailTable");
+  var head = "<thead><tr><th>Acteur</th>" + CRIT.map(function(c){ return "<th>"+c.n.replace(" US","").replace("Éligibilité TSV","Éligibilité")+"</th>"; }).join("") + "<th>Score</th><th>Réaction observée du marché</th></tr></thead>";
+  var body = "<tbody>" + ranked.map(function(r){
+    return "<tr><td class='name'>"+r.a.n+"</td>" + CRIT.map(function(c){ return "<td>"+r.a.s[c.id]+"</td>"; }).join("") +
+           "<td style='color:var(--accent);font-weight:600'>"+r.v.toFixed(0)+"</td><td style='color:var(--ink-2)'>"+r.a.react+"</td></tr>";
+  }).join("") + "</tbody>";
+  t.innerHTML = head + body;
+  drawMatrix();
+}
+render();
+onScroll();
+})();
+</script>
+</body>
+</html>
