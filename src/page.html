@@ -269,6 +269,10 @@ input[type="number"],select{font-family:var(--mono);font-size:14px;background:va
 .offerbox{border:1px solid var(--accent);border-radius:8px;background:var(--surface);overflow:hidden}
 .offertop{padding:34px 34px 30px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,var(--accent-soft),transparent 70%)}
 .offertop .eyebrow{color:var(--accent)}
+.offerhead{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.slots{display:flex;gap:4px}
+.slots i{width:9px;height:14px;border-radius:2px;background:var(--accent);display:block;opacity:.85}
+.slotlab{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .offerh{font-family:var(--disp);font-size:clamp(28px,5vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:14px;max-width:18ch}
 .offerh em{font-style:normal;color:var(--accent)}
 .offerp{font-size:17.5px;color:var(--ink-2);margin-top:16px;max-width:56ch;line-height:1.55}
@@ -986,44 +990,42 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<!-- ============================================================
-     BLOC OFFRE — les deux pseudos ci-dessous sont à confirmer.
-     Cherchez INSTAGRAM_HANDLE et TIKTOK_HANDLE pour les changer.
-     ============================================================ -->
 <section class="offer" id="offre">
   <div class="wrap">
     <div class="offerbox">
       <div class="offertop">
-        <div class="eyebrow">Offre de bienvenue</div>
-        <h2 class="offerh">On t'offre <em>30 €</em> en crypto, sans aucun dépôt.</h2>
-        <p class="offerp">Inscris-toi sur eToro avec notre lien, envoie-moi un DM, et je t'envoie tes 30 € en crypto. Pas besoin de déposer quoi que ce soit — il suffit de créer ton compte.</p>
+        <div class="offerhead">
+          <div class="eyebrow">Offre limitée</div>
+          <div class="slots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="slotlab">10 places</div>
+        </div>
+        <h2 class="offerh">Les <em>10 premiers</em> reçoivent 30&nbsp;€ en crypto.</h2>
+        <p class="offerp">Pas d'inscription, pas de dépôt, aucune condition. Envoie-moi un message sur Instagram : les dix premiers repartent avec 30&nbsp;€ en crypto.</p>
       </div>
       <div class="steps">
         <div class="step">
           <div class="sn">Étape 01</div>
-          <div class="sh">Crée ton compte</div>
-          <div class="sp">Inscris-toi sur eToro via le lien ci-dessous. Aucun dépôt n'est demandé pour bénéficier de l'offre.</div>
+          <div class="sh">Écris-moi</div>
+          <div class="sp">Un DM sur Instagram, et c'est tout. Pas de formulaire, pas de compte à créer, pas de plateforme à rejoindre.</div>
         </div>
         <div class="step">
           <div class="sn">Étape 02</div>
-          <div class="sh">Envoie-moi un DM</div>
-          <div class="sp">Un message sur Instagram ou TikTok avec le pseudo du compte que tu viens de créer, et c'est tout.</div>
+          <div class="sh">Les dix premiers</div>
+          <div class="sp">Seuls les dix premiers messages sont retenus. Je réponds à tout le monde, que tu sois dans les dix ou non.</div>
         </div>
         <div class="step">
           <div class="sn">Étape 03</div>
-          <div class="sh">Reçois tes 30 €</div>
-          <div class="sp">Je t'envoie 30 € en crypto, gratuitement. Tu en fais ce que tu veux — y compris tester ce que raconte ce dossier.</div>
+          <div class="sh">Reçois tes 30&nbsp;€</div>
+          <div class="sp">Je t'envoie 30&nbsp;€ en crypto sur l'adresse de ton choix. Tu en fais ce que tu veux — y compris tester ce que raconte ce dossier.</div>
         </div>
       </div>
       <div class="offeract">
-        <a class="cta" href="https://cloud.connect.etoro.com/Cryptocomics?utm_medium=Affiliate&amp;utm_source=131703&amp;utm_content=22454&amp;utm_serial=&amp;utm_campaign=&amp;utm_term=" target="_blank" rel="noopener sponsored">S'inscrire sur eToro →</a>
         <!-- INSTAGRAM_HANDLE -->
-        <a class="cta ghost" href="https://instagram.com/cryptocomics" target="_blank" rel="noopener">DM sur Instagram</a>
-        <!-- TIKTOK_HANDLE -->
-        <a class="cta ghost" href="https://tiktok.com/@cryptocomics" target="_blank" rel="noopener">DM sur TikTok</a>
+        <a class="cta" href="https://www.instagram.com/crypto_comiks" target="_blank" rel="noopener">M'écrire sur Instagram →</a>
+        <span class="mono" style="font-size:12px;color:var(--ink-3)">@crypto_comiks</span>
       </div>
       <div class="offernote">
-        <b>Lien affilié.</b> Nous percevons une commission d'eToro si tu ouvres un compte via ce lien — c'est ce qui finance l'offre. Les 30 € sont une initiative personnelle : ils sont versés par nous, pas par eToro, qui n'est ni partenaire ni garant de cette offre. <b>Les investissements comportent des risques, votre capital est à risque.</b> Rien sur cette page ne constitue un conseil en investissement.
+        <b>Offre personnelle, limitée aux dix premiers messages.</b> Elle n'est liée à aucune plateforme, aucun courtier et aucun partenariat commercial : c'est un cadeau, pas une promotion. Aucune inscription, aucun dépôt et aucun achat ne sont demandés. Rien sur cette page ne constitue un conseil en investissement.
       </div>
     </div>
   </div>
@@ -1059,7 +1061,7 @@ html{scroll-behavior:smooth}
       <a href="https://chain.link/resources/establishing-unified-standard-asset-servicing" target="_blank" rel="noopener">Chainlink — Standard unifié d'<em>asset servicing</em></a>
     </div>
     <div class="disclaimer">
-      <b>Avertissement.</b> Ce dossier est un travail d'analyse et de vulgarisation, à jour au 22 septembre 2026. Il ne constitue ni un conseil en investissement, ni un conseil juridique, ni une recommandation d'achat ou de vente. Les notes attribuées aux acteurs sont des jugements éditoriaux argumentés, pas des mesures. Les chiffres proviennent de sources publiques citées ci-dessus, avec leurs dates de relevé ; les cours et encours évoluent en permanence. Le simulateur de conformité est un outil pédagogique qui simplifie un ordre administratif de plusieurs dizaines de pages — reportez-vous au texte 34-106402 et à un conseil qualifié pour toute décision réelle. Cette page contient un lien affilié vers eToro, signalé comme tel, qui nous rémunère si vous ouvrez un compte.
+      <b>Avertissement.</b> Ce dossier est un travail d'analyse et de vulgarisation, à jour au 22 septembre 2026. Il ne constitue ni un conseil en investissement, ni un conseil juridique, ni une recommandation d'achat ou de vente. Les notes attribuées aux acteurs sont des jugements éditoriaux argumentés, pas des mesures. Les chiffres proviennent de sources publiques citées ci-dessus, avec leurs dates de relevé ; les cours et encours évoluent en permanence. Le simulateur de conformité est un outil pédagogique qui simplifie un ordre administratif de plusieurs dizaines de pages — reportez-vous au texte 34-106402 et à un conseil qualifié pour toute décision réelle.
     </div>
     <p class="mono" style="font-size:11px;color:var(--ink-3);margin-top:24px">Dossier 34-106402 · Analyse indépendante · Données relevées le 22 septembre 2026</p>
   </div>

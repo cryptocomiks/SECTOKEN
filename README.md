@@ -20,20 +20,19 @@ tokenisées dans des pools AMM permissionnés sur blockchain publique.
 | 08 | La dynamique | Échec du CLARITY Act, bascule vers les régulateurs, 12 chantiers en cours |
 | 09 | Risques | Veto émetteur, trou d'information du week-end, fragmentation, fragilité juridique |
 | 10 | Chronologie | De xStocks (juillet 2025) à l'expiration de l'exemption (septembre 2031) |
-| — | Offre | Bloc d'inscription eToro (lien affilié) avec les 30 € offerts |
+| — | Offre | Giveaway : les 10 premiers DM sur Instagram reçoivent 30 € en crypto |
 
 La thèse du dossier : l'exemption ne récompense pas la décentralisation, elle récompense
 la conformité — ce qui inverse le classement des gagnants par rapport à la réaction des prix.
 
-## Bloc offre eToro
+## Bloc offre
 
-Le bloc en fin de page contient un lien affilié eToro et deux boutons DM. Les deux pseudos
-sont des valeurs à confirmer : cherchez `INSTAGRAM_HANDLE` et `TIKTOK_HANDLE` dans
-`src/page.html` pour les remplacer, puis relancez `node build.mjs`.
+Le bloc en fin de page est un giveaway sans contrepartie : les dix premiers messages reçus
+sur Instagram (`@crypto_comiks`) reçoivent 30 € en crypto. Aucune inscription, aucun dépôt,
+aucun lien avec une plateforme ou un courtier — et la mention le dit explicitement.
 
-Le bloc porte une mention d'affiliation explicite et un avertissement sur le risque,
-comme l'exige la réglementation française et européenne sur la transparence des liens
-commerciaux et la promotion de produits financiers.
+Pour changer le compte, cherchez `INSTAGRAM_HANDLE` dans `src/page.html`, puis relancez
+`node build.mjs`.
 
 ## Structure du projet
 
